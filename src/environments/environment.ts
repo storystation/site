@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   SERVER_HOST: '',
-  API_PATH: ''
+  API_PATH: '',
+  APP_HOST: 'http://localhost:4200'
 };
 
 /*
