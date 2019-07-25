@@ -9,7 +9,6 @@ import Menu from '../../../shared/interfaces/menu';
   styleUrls: ['./nav.component.sass']
 })
 export class NavComponent implements OnInit {
-
   environment = environment;
   showMenu = true;
 
@@ -21,7 +20,8 @@ export class NavComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
