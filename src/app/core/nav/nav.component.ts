@@ -10,13 +10,44 @@ import Menu from '../../../shared/interfaces/menu';
 })
 export class NavComponent implements OnInit {
   environment = environment;
-  showMenu = true;
+  isLogged = false;
 
   menus: Menu[] = [
     {
-      name: 'Premier lien',
-      icon: '',
-      url: '#'
+      name: 'Fonctionnalités',
+      url: '/features',
+      display_when_logged: true,
+      display_when_not_logged: true
+    },
+    {
+      name: 'Tarifs',
+      url: '/prices',
+      display_when_logged: true,
+      display_when_not_logged: true
+    },
+    {
+      name: 'Pour les écrivains',
+      url: '/writers',
+      display_when_logged: true,
+      display_when_not_logged: true
+    },
+    {
+      name: 'Déconnexion',
+      url: '/logout',
+      display_when_logged: true,
+      display_when_not_logged: false
+    },
+    {
+      name: 'Connexion',
+      url: '/login',
+      display_when_logged: false,
+      display_when_not_logged: true
+    },
+    {
+      name: 'Commencer',
+      url: '/register',
+      display_when_logged: false,
+      display_when_not_logged: true
     }
   ];
 
@@ -24,6 +55,7 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Set here if the user is logged or not
   }
 
 }

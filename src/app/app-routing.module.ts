@@ -5,6 +5,7 @@ import { LayoutComponent } from './core/layout/layout.component';
 
 // Import all routes
 import { authRoutes } from './pages/auth/auth.routing';
+import { landingRoutes } from './pages/landing/landing.routing';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
         // Add routes from pages below
-        ...authRoutes
+        ...authRoutes,
+        ...landingRoutes,
     ]
   }
 ];

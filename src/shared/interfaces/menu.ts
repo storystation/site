@@ -4,6 +4,8 @@ export default interface Menu {
   name: string;
   icon?: string;
   url?: string;
+  display_when_logged: boolean,
+  display_when_not_logged: boolean,
   submenu_ref?: string;
   submenu?: Submenu[];
 }

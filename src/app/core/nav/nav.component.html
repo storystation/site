@@ -1,13 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">Storystation</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_storystation"
+          aria-controls="navbar_storystation" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse" id="navbar_storystation">
     <div class="navbar-nav">
       <ng-container *ngFor="let menu of menus">
-        <a class="nav-item nav-link href" [routerLink]="menu.url">{{ menu.name }}</a>
+        <a class="nav-item nav-link href" [routerLink]="menu.url"
+           *ngIf="(isLogged === menu.display_when_logged && isLogged !== menu.display_when_not_logged)
+                  || (menu.display_when_logged && menu.display_when_not_logged)">
+          {{ menu.name }}
+        </a>
       </ng-container>
     </div>
   </div>
