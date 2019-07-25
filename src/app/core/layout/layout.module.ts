@@ -14,4 +14,4 @@ import { NavModule } from '../nav/nav.module';
     NavModule
   ]
 })
-export class LayoutModule { }
+export class LayoutModule {}
