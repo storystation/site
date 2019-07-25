@@ -7,7 +7,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-
   isLogin = false;
 
   loginForm: FormGroup;
@@ -29,5 +28,4 @@ export class LoginComponent implements OnInit {
     // this.isLogin = true;
     console.log('action');
   }
-
 }
