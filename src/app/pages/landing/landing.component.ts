@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-landing',
@@ -12,6 +13,10 @@ export class LandingComponent implements OnInit {
   isWritersPage = false;
   isFeaturesPage = false;
   isPricesPage = false;
+  isBeOnTouch = false;
+
+  beOnTouchForm: FormGroup;
+  email = new FormControl('', [Validators.required, Validators.email]);
 
   subscribeSpecs = [
     {
@@ -82,7 +87,10 @@ export class LandingComponent implements OnInit {
 
   snapshot: any;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+      private formBuilder: FormBuilder,
+      private activatedRoute: ActivatedRoute
+  ) {
     this.snapshot = this.activatedRoute.snapshot;
   }
 
@@ -91,5 +99,15 @@ export class LandingComponent implements OnInit {
     this.isWritersPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'writers';
     this.isFeaturesPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'features';
     this.isPricesPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'prices';
+
+    if (this.isWritersPage) {
+      this.beOnTouchForm = this.formBuilder.group({
+        email: this.email
+      });
+    }
+  }
+
+  beOnTouch() {
+    this.isBeOnTouch = true;
   }
 }

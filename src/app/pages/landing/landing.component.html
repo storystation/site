@@ -11,7 +11,26 @@
   <div class="full-height segment">
     <h1 class="text-center">Pour les écrivains</h1>
     <p>Écrivez vos histoire, ajouter les évènements qui peuvent alterner la quête, choisissez quels modules utiliser.
-       Proposez à vos lecteur une véritable expérience au sein de vos ouvrages.</p>
+       Proposez à vos lecteur une véritable expérience au cœur de vos ouvrages.</p>
+    <p>Cette fonctionnalité est encore en cours de développement, restez au courant de toutes nos nouveautés en vous inscrivant à notre newsletter !</p>
+    <form [formGroup]="beOnTouchForm">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="form-group">
+            <label for="validationEmail" required style="display: none;">Email</label>
+            <input type="email" class="form-control" id="validationEmail" placeholder="Email" formControlName="email"
+                   [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <button class="btn btn-lg btn-block btn-primary mb-3" (click)="beOnTouch()"
+                  [ngClass]="{ 'is-loading is-loading-sm': isBeOnTouch }"
+                  [disabled]="isBeOnTouch || beOnTouchForm.invalid">
+            Tenez-moi au courant
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 </ng-container>
 

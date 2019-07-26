@@ -15,9 +15,7 @@ export class RegisterComponent implements OnInit {
   password = new FormControl('', [Validators.required, Validators.minLength(8)]);
   passwordCheck = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
-  constructor(
-      private formBuilder: FormBuilder,
-  ) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
