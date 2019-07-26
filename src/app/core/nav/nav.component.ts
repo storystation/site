@@ -10,6 +10,7 @@ import Menu from '../../../shared/interfaces/menu';
 })
 export class NavComponent implements OnInit {
   environment = environment;
+
   isLogged = false;
 
   menus: Menu[] = [
@@ -57,8 +58,7 @@ export class NavComponent implements OnInit {
     }
   ];
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     // Set here if the user is logged or not
