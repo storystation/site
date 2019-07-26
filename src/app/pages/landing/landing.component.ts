@@ -60,27 +60,33 @@ export class LandingComponent implements OnInit {
   ];
   hardwareSpecs = [
     {
+      name: 'Speech box',
+      description: 'L\'élément indispensable pour pouvoir utiliser l\'application, lire, vivre les histoires et greffer ' +
+          'des modules dessus pour que votre histoire soit toujours plus immersive.',
+      price: 200
+    },
+    {
       name: 'Sonar',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque delectus dicta dignissimos dolor doloremque dolores ' +
-          'ducimus ea enim harum id in incidunt iste iusto laudantium, nesciunt placeat qui, voluptas! Velit?',
+      description: 'Pouvoir passer des obstacles juste avec vos mouvements, impossible ? Pas avec le sonar. Passez des falaises, faites' +
+          ' d\'autres trucs cool aussi.',
       price: 150
     },
     {
       name: 'Boutons',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum impedit maxime vitae? Dicta eveniet nam natus ' +
-          'nemo repudiandae sit veniam vitae? Corporis harum in libero quos, sapiente unde vel.',
+      description: 'Un bouton standard, sa forme innovante carrée et colorée vous aidera à faire des choix plus ou moins complexes.',
       price: 50
     },
     {
       name: 'Manche (pas encore disponible)',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet aut blanditiis consequuntur, eos maxime ' +
-          'nam nemo nobis nulla odio, quisquam soluta. Aspernatur dolores eius laborum, laudantium magnam perferendis.',
+      description: 'Tirez le manche, secouez le, faites lui faire des vas et viens, vous sentez cette sensation ? Cette sensation ' +
+          'd\'avoir évacué toute la frustration de cet ennemi qui vous barrait la route ? Grâce à votre parfaite imitation des mouvements' +
+          ' d\'épée, vous avez su surpasser cet obstacle aussi !',
       price: 30
     },
     {
       name: 'Sirène',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi consequatur cumque distinctio dolorum ducimus ' +
-          'eius, hic id, illo ipsum libero nam natus perferendis quae quisquam ratione sequi ut voluptate!',
+      description: 'Vous entendez le son très fin 8 bit de cet instrument ? Vous sentez la nostalgie vous envahir ? C\'est plus fort ' +
+          'que vous, vous avez envie d\'aller plus loin avec ce buzzer, comme vous voulez, mais attention à ce qui pourrait arriver.',
       price: 20
     },
   ];
