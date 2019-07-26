@@ -81,7 +81,28 @@ export class LandingComponent implements OnInit {
       price: 15
     },
   ];
-  hardwareSpecs = [];
+  hardwareSpecs = [
+    {
+      name: 'Le capteur de distance',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque delectus dicta dignissimos dolor doloremque dolores ducimus ea enim harum id in incidunt iste iusto laudantium, nesciunt placeat qui, voluptas! Velit?',
+      price: 150
+    },
+    {
+      name: 'Les boutons',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum impedit maxime vitae? Dicta eveniet nam natus nemo repudiandae sit veniam vitae? Corporis harum in libero quos, sapiente unde vel.',
+      price: 50
+    },
+    {
+      name: 'Le joystick (pas encore disponible)',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet aut blanditiis consequuntur, eos maxime nam nemo nobis nulla odio, quisquam soluta. Aspernatur dolores eius laborum, laudantium magnam perferendis.',
+      price: 50
+    },
+    {
+      name: 'Le buzzer',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi consequatur cumque distinctio dolorum ducimus eius, hic id, illo ipsum libero nam natus perferendis quae quisquam ratione sequi ut voluptate!',
+      price: 20
+    },
+  ];
 
   snapshot: any;
 
