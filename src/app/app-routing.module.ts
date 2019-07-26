@@ -6,6 +6,7 @@ import { LayoutComponent } from './core/layout/layout.component';
 // Import all routes
 import { authRoutes } from './pages/auth/auth.routing';
 import { landingRoutes } from './pages/landing/landing.routing';
+import { storiesRoutes } from './pages/stories/stories.routing';
 import { notFoundRoutes } from './pages/not-found/not-found.routing';
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
         // Add routes from pages below
         ...authRoutes,
         ...landingRoutes,
-        ...notFoundRoutes
+        ...storiesRoutes,
+        ...notFoundRoutes,
     ]
   }
 ];

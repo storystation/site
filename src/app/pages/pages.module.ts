@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AuthModule } from './auth/auth.module';
 import { LandingModule } from './landing/landing.module';
 import { NotFoundModule } from './not-found/not-found.module';
+import { StoriesModule } from './stories/stories.module';
 
 @NgModule({
   declarations: [],
@@ -12,7 +13,8 @@ import { NotFoundModule } from './not-found/not-found.module';
     CommonModule,
     AuthModule,
     LandingModule,
-    NotFoundModule
+    NotFoundModule,
+    StoriesModule
   ]
 })
 
