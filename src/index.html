@@ -14,10 +14,27 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
+  <style>
+    .no-script {
+      line-height: 24px;
+      margin: 10%;
+      width: 80%;
+    }
+
+    .no-script-logo {
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
   <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <noscript>
+    <div class="no-script">
+      <span class="no-script-logo">Storystation</span>
+      <p>We've detected that JavaScript is disabled in your browser, please enable JavaScript to continue using this application.</p>
+      <p>Nous avons détécté que JavaScript est désactivé sur votre navigateur, veuillez le réactiver pour continuer à utiliser cette application.</p>
+    </div>
+  </noscript>
   <!-- TODO: To delete this shit of jquery -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
