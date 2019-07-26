@@ -13,6 +13,76 @@ export class LandingComponent implements OnInit {
   isFeaturesPage = false;
   isPricesPage = false;
 
+  subscribeSpecs = [
+    {
+      name: 'Gratuite',
+      description: [
+        {
+          name: 'Un compte personnel'
+        },
+        {
+          name: 'Accès à 2 histoires par mois'
+        }
+      ],
+      price: 0
+    },
+    {
+      name: 'Starter',
+      description: [
+        {
+          name: 'Un compte personnel'
+        },
+        {
+          name: 'Accès à 5 histoires par mois'
+        },
+        {
+          name: 'Passage priorisé lors d\'appels d\'aide'
+        },
+        {
+          name: 'Sans publicités'
+        }
+      ],
+      price: 5
+    },
+    {
+      name: 'Premium',
+      description: [
+        {
+          name: 'Un compte personnel'
+        },
+        {
+          name: 'Accès à illimité à toutes les histoires du catalogue'
+        },
+        {
+          name: 'Passage priorisé lors d\'appels d\'aide'
+        },
+        {
+          name: 'Sans publicités'
+        }
+      ],
+      price: 10
+    },
+    {
+      name: 'Famille',
+      description: [
+        {
+          name: 'Jusqu\'à 4 comptes gérés par un compte parent'
+        },
+        {
+          name: 'Accès illimité à toutes les histoires du catalogue'
+        },
+        {
+          name: 'Passage priorisé lors d\'appels d\'aide'
+        },
+        {
+          name: 'Sans publicités'
+        }
+      ],
+      price: 15
+    },
+  ];
+  hardwareSpecs = [];
+
   snapshot: any;
 
   constructor(private activatedRoute: ActivatedRoute) {

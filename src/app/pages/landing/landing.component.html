@@ -36,6 +36,15 @@
       </tr>
       </thead>
       <tbody>
+      <tr *ngFor="let spec of subscribeSpecs">
+        <th scope="row">{{ spec.name }}</th>
+        <td>
+          <ul>
+            <li *ngFor="let desc of spec.description">{{ desc.name }}</li>
+          </ul>
+        </td>
+        <td>{{ spec.price + '€/mois' }}</td>
+      </tr>
       <tr>
         <th scope="row">Gratuite</th>
         <td>
