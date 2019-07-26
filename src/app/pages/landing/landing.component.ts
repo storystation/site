@@ -15,7 +15,7 @@ export class LandingComponent implements OnInit {
 
   subscribeSpecs = [
     {
-      name: 'Gratuite',
+      name: 'Découverte',
       description: [
         { name: 'Un compte personnel' },
         { name: 'Accès à 2 histoires par mois' }
@@ -23,7 +23,7 @@ export class LandingComponent implements OnInit {
       price: 0
     },
     {
-      name: 'Starter',
+      name: 'Explorateur',
       description: [
         { name: 'Un compte personnel' },
         { name: 'Accès à 5 histoires par mois' },
@@ -33,7 +33,7 @@ export class LandingComponent implements OnInit {
       price: 5
     },
     {
-      name: 'Premium',
+      name: 'Berzerk',
       description: [
         { name: 'Un compte personnel' },
         { name: 'Accès à illimité à toutes les histoires du catalogue' },
@@ -43,7 +43,7 @@ export class LandingComponent implements OnInit {
       price: 10
     },
     {
-      name: 'Famille',
+      name: 'Dynastie',
       description: [
         { name: 'Jusqu\'à 4 comptes gérés par un compte parent' },
         { name: 'Accès illimité à toutes les histoires du catalogue' },
@@ -55,25 +55,25 @@ export class LandingComponent implements OnInit {
   ];
   hardwareSpecs = [
     {
-      name: 'Le capteur de distance',
+      name: 'Sonar',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque delectus dicta dignissimos dolor doloremque dolores ' +
           'ducimus ea enim harum id in incidunt iste iusto laudantium, nesciunt placeat qui, voluptas! Velit?',
       price: 150
     },
     {
-      name: 'Les boutons',
+      name: 'Boutons',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum impedit maxime vitae? Dicta eveniet nam natus ' +
           'nemo repudiandae sit veniam vitae? Corporis harum in libero quos, sapiente unde vel.',
       price: 50
     },
     {
-      name: 'Le joystick (pas encore disponible)',
+      name: 'Manche (pas encore disponible)',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet aut blanditiis consequuntur, eos maxime ' +
           'nam nemo nobis nulla odio, quisquam soluta. Aspernatur dolores eius laborum, laudantium magnam perferendis.',
-      price: 50
+      price: 30
     },
     {
-      name: 'Le buzzer',
+      name: 'Sirène',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi consequatur cumque distinctio dolorum ducimus ' +
           'eius, hic id, illo ipsum libero nam natus perferendis quae quisquam ratione sequi ut voluptate!',
       price: 20
