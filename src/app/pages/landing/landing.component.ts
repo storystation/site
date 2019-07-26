@@ -23,6 +23,7 @@ export class LandingComponent implements OnInit {
       name: 'Découverte',
       description: [
         { name: 'Un compte personnel' },
+        { name: 'Une aventure qui commence' },
         { name: 'Accès à 2 histoires par mois' }
       ],
       price: 0
@@ -42,6 +43,7 @@ export class LandingComponent implements OnInit {
       description: [
         { name: 'Un compte personnel' },
         { name: 'Accès à illimité à toutes les histoires du catalogue' },
+        { name: 'Une soif d\'histoire innepuisable' },
         { name: 'Passage priorisé lors d\'appels d\'aide' },
         { name: 'Sans publicités' }
       ],
@@ -52,6 +54,7 @@ export class LandingComponent implements OnInit {
       description: [
         { name: 'Jusqu\'à 4 comptes gérés par un compte parent' },
         { name: 'Accès illimité à toutes les histoires du catalogue' },
+        { name: 'Si vous en avez assez de lire des livres à vos enfants, laissez les faire' },
         { name: 'Passage priorisé lors d\'appels d\'aide' },
         { name: 'Sans publicités' }
       ],
