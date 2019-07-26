@@ -21,11 +21,17 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-block btn-primary mb-3" (click)="login()"
-            [ngClass]="{ 'is-loading is-loading-sm': isLogin }"
-            [disabled]="isLogin || loginForm.invalid">
-      Se connecter
-    </button>
-    <button class="btn btn-lg btn-block btn-primary mb-3" routerLink="/register">S'enregistrer</button>
+    <div class="row">
+      <div class="col-6">
+        <button class="btn btn-lg btn-block btn-primary mb-3" (click)="login()"
+                [ngClass]="{ 'is-loading is-loading-sm': isLogin }"
+                [disabled]="isLogin || loginForm.invalid">
+          Se connecter
+        </button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-lg btn-block btn-primary mb-3" routerLink="/register">S'enregistrer</button>
+      </div>
+    </div>
   </form>
 </div>
