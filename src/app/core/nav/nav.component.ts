@@ -32,6 +32,12 @@ export class NavComponent implements OnInit {
       display_when_not_logged: true
     },
     {
+      name: 'Mes histoires',
+      url: '/stories',
+      display_when_logged: true,
+      display_when_not_logged: true // Change for false here
+    },
+    {
       name: 'Déconnexion',
       url: '/logout',
       display_when_logged: true,

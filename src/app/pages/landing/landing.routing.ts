@@ -6,5 +6,17 @@ export const landingRoutes: Routes = [
   {
     path: '',
     component: LandingComponent
+  },
+  {
+    path: 'features',
+    component: LandingComponent
+  },
+  {
+    path: 'prices',
+    component: LandingComponent
+  },
+  {
+    path: 'writers',
+    component: LandingComponent
   }
 ];

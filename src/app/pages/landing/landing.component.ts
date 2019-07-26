@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -8,10 +8,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(
-  ) { }
+  isHomePage = false;
+  isWritersPage = false;
+  isFeaturesPage = false;
+  isPricesPage = false;
 
-  ngOnInit() {
+  snapshot: any;
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.snapshot = this.activatedRoute.snapshot;
   }
 
+  ngOnInit() {
+    this.isHomePage = this.snapshot.url.length === 0;
+    this.isWritersPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'writers';
+    this.isFeaturesPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'features';
+    this.isPricesPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'prices';
+  }
 }
