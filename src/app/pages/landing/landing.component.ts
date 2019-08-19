@@ -11,7 +11,6 @@ export class LandingComponent implements OnInit {
 
   isHomePage = false;
   isWritersPage = false;
-  isFeaturesPage = false;
   isPricesPage = false;
   isBeOnTouch = false;
 
@@ -106,7 +105,6 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
     this.isHomePage = this.snapshot.url.length === 0;
     this.isWritersPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'writers';
-    this.isFeaturesPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'features';
     this.isPricesPage = this.snapshot.url.length > 0 && this.snapshot.url[0].path === 'prices';
 
     if (this.isWritersPage) {

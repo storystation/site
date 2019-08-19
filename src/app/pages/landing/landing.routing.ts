@@ -8,10 +8,6 @@ export const landingRoutes: Routes = [
     component: LandingComponent
   },
   {
-    path: 'features',
-    component: LandingComponent
-  },
-  {
     path: 'prices',
     component: LandingComponent
   },
