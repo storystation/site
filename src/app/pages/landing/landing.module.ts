@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LandingComponent } from './landing.component';
+import { CountdownModule } from '../../core/countdown/countdown.module';
 
 @NgModule({
   declarations: [LandingComponent],
@@ -11,7 +12,8 @@ import { LandingComponent } from './landing.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CountdownModule
   ]
 })
 export class LandingModule { }
