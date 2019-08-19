@@ -15,12 +15,6 @@ export class NavComponent implements OnInit {
 
   menus: Menu[] = [
     {
-      name: 'Fonctionnalités',
-      url: '/features',
-      display_when_logged: true,
-      display_when_not_logged: true
-    },
-    {
       name: 'Tarifs',
       url: '/prices',
       display_when_logged: true,
