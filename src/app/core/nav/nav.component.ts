@@ -18,13 +18,13 @@ export class NavComponent implements OnInit {
       name: 'Tarifs',
       url: '/prices',
       display_when_logged: true,
-      display_when_not_logged: true
+      display_when_not_logged: false
     },
     {
-      name: 'Pour les écrivains',
+      name: 'Écrivains',
       url: '/writers',
       display_when_logged: true,
-      display_when_not_logged: true
+      display_when_not_logged: false
     },
     {
       name: 'Mes histoires',
