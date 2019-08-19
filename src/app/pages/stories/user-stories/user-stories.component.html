@@ -1,16 +1,48 @@
 <div class="div-user-stories" id="div-user-stories">
   <h1 class="text-center">Histoires</h1>
-  <p class="text-center">Commencez une nouvelle histoire ou reprenez là où vous en étiez</p>
+  <p class="text-center">Commencez une nouvelle histoire ou bien reprenez là où vous en étiez</p>
   <div class="current-stories mb-1rem" id="current-stories">
-    <h2>Histoires en cours</h2>
-    <ul>
-      <li>Histoire 01 (Dernière sauvegarde le 01/01/2001)</li>
-      <li>Histoire 02 (Dernière sauvegarde le 01/01/2001)</li>
-      <li>Histoire 03 (Dernière sauvegarde le 01/01/2001)</li>
-    </ul>
+    <div class="row">
+      <div class="col-8">
+        <h2>Histoires en cours</h2>
+      </div>
+      <div class="col-4">
+        <small *ngIf="!storiesLimits">{{ totalCurrentStories }} histoires en cours.</small>
+        <small *ngIf="storiesLimits">{{ totalCurrentStories }} histoires en cours, vous disposez encore de {{ storiesLeft }} histoires pour ce mois.</small>
+      </div>
+    </div>
+    <div class="row pt-1rem">
+      <div class="col-12">
+
+        <ng-container *ngIf="totalCurrentStories == 0">
+          <p>Vous n'avez commencé aucune histoire pour le moment. Vous pouvez en débuter une nouvelle à travers notre générateur d'histoires en cliquant sur le bouton ci-dessous.</p>
+          <button>Nouvelle histoire</button>
+        </ng-container>
+
+        <ng-container *ngIf="totalCurrentStories > 0">
+          <ul>
+            <li>Histoire 01 (Dernière sauvegarde le 01/01/2001)</li>
+            <li>Histoire 02 (Dernière sauvegarde le 01/01/2001)</li>
+            <li>Histoire 03 (Dernière sauvegarde le 01/01/2001)</li>
+          </ul>
+        </ng-container>
+
+      </div>
+    </div>
   </div>
+
   <div class="new-story" id="new-story">
-    <h2>Nouvelle histoire</h2>
-    <button>Nouvelle histoire</button>
+    <div class="row">
+      <div class="col-12">
+        <h2>Nouvelle histoire</h2>
+      </div>
+    </div>
+    <div class="row pt-1rem">
+      <div class="col-12">
+        <p>Vous voulez vous lancer dans une nouvelle aventure ? Cliquez sur le bouton ci-dessous et laissez vous guider dans le générateur d'histoires.</p>
+        <button>Nouvelle histoire</button>
+      </div>
+    </div>
+
   </div>
 </div>

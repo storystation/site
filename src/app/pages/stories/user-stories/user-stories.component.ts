@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserStoriesComponent implements OnInit {
 
+  totalCurrentStories = 0;
+  totalStoriesMonths = 0;
+  storiesLeft = 0;
+  storiesLimits = true;
+  stories: any = [];
+
   constructor() { }
 
   ngOnInit() {
