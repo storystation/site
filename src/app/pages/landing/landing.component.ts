@@ -23,7 +23,7 @@ export class LandingComponent implements OnInit {
       name: 'Découverte',
       description: [
         { name: 'Un compte personnel' },
-        { name: 'Une aventure qui commence' },
+        { name: 'Une nouvelle aventure qui commence pour vous' },
         { name: 'Accès à 2 histoires par mois' }
       ],
       price: 0
