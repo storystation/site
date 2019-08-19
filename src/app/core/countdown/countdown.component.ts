@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-countdown',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./countdown.component.sass']
 })
 export class CountdownComponent implements OnInit {
+
+  @Input() time: any;
+  @Input() color: string;
 
   constructor() { }
 
