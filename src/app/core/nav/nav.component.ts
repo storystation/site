@@ -36,7 +36,7 @@ export class NavComponent implements OnInit {
       name: 'Mes histoires',
       url: '/stories',
       display_when_logged: true,
-      display_when_not_logged: false
+      display_when_not_logged: true // TODO: Change this to false
     },
     {
       name: 'Déconnexion',
