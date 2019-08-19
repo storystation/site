@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-stories',
-  templateUrl: './home-stories.component.html',
-  styleUrls: ['./home-stories.component.sass']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.sass']
 })
-export class HomeStoriesComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   totalCurrentStories = 0;
   totalStoriesMonths = 0;
