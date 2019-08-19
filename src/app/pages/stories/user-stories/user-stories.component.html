@@ -8,7 +8,7 @@
       </div>
       <div class="col-lg-4 col-s-12">
         <small *ngIf="!storiesLimits">{{ totalCurrentStories }} histoires en cours.</small>
-        <small *ngIf="storiesLimits && storiesLeft === 0">{{ totalCurrentStories }} histoires en cours. Vous ne pouvez plus commencer d'histoires pour ce mois.</small>
+        <small *ngIf="storiesLimits && storiesLeft === 0">{{ totalCurrentStories }} histoires en cours. Vous avez atteint la limite et ne pouvez plus commencer d'histoires pour ce mois.</small>
         <small *ngIf="storiesLimits && storiesLeft > 0">{{ totalCurrentStories }} histoires en cours. Il vous reste {{ storiesLeft }} histoires disponibles pour ce mois.</small>
       </div>
     </div>
