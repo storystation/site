@@ -9,3 +9,6 @@ Page de landing (d'accueil) de l'application.
 
 ## `not-found`
 Page d'erreur 404, appellée lorsque l'application ne trouve pas la page demandée à l'URL indiquée.
+
+## `stories`
+Regroupe toutes les pages relatives aux jeux.

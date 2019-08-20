@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
-import { UserStoriesComponent } from './user-stories/user-stories.component';
+import { HomeComponent } from './home/home.component';
 
 export const storiesRoutes: Routes = [
   {
     path: 'stories',
-    component: UserStoriesComponent
+    component: HomeComponent
   }
 ];

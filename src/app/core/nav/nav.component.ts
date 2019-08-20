@@ -6,7 +6,7 @@ import Menu from '../../../shared/interfaces/menu';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.sass']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
   environment = environment;
@@ -15,22 +15,16 @@ export class NavComponent implements OnInit {
 
   menus: Menu[] = [
     {
-      name: 'Fonctionnalités',
-      url: '/features',
-      display_when_logged: true,
-      display_when_not_logged: true
-    },
-    {
       name: 'Tarifs',
       url: '/prices',
       display_when_logged: true,
-      display_when_not_logged: true
+      display_when_not_logged: false
     },
     {
-      name: 'Pour les écrivains',
+      name: 'Écrivains',
       url: '/writers',
       display_when_logged: true,
-      display_when_not_logged: true
+      display_when_not_logged: false
     },
     {
       name: 'Mes histoires',
