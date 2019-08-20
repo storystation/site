@@ -1,18 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="">Storystation</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_storystation"
+  <a class="navbar-brand primary" routerLink="">Storystation</a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar_storystation"
           aria-controls="navbar_storystation" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbar_storystation">
     <div class="navbar-nav">
-      <ng-container *ngFor="let menu of menus">
-        <a class="nav-item nav-link href" [routerLink]="menu.url"
-           *ngIf="(isLogged === menu.display_when_logged && isLogged !== menu.display_when_not_logged)
-                  || (menu.display_when_logged && menu.display_when_not_logged)">
-          {{ menu.name }}
-        </a>
-      </ng-container>
+      <ul>
+        <ng-container *ngFor="let menu of menus">
+          <li data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-item nav-link href text-right mr-3" [routerLink]="menu.url"
+               *ngIf="(isLogged === menu.display_when_logged && isLogged !== menu.display_when_not_logged)
+                      || (menu.display_when_logged && menu.display_when_not_logged)">
+              {{ menu.name }}
+            </a>
+          </li>
+        </ng-container>
+      </ul>
     </div>
   </div>
 </nav>
