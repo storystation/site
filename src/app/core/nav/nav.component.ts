@@ -6,7 +6,7 @@ import Menu from '../../../shared/interfaces/menu';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.sass']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
   environment = environment;
