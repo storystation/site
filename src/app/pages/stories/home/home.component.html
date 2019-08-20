@@ -4,7 +4,7 @@
   <div class="current-stories mb-1rem" id="current-stories">
     <div class="row">
       <div class="col-lg-8 col-s-12">
-        <h2>Histoires en cours</h2>
+        <h2 class="no-mb">Histoires en cours</h2>
       </div>
       <div class="col-lg-4 col-s-12">
         <small *ngIf="!storiesLimits">{{ totalCurrentStories }} histoires en cours.</small>
@@ -17,7 +17,7 @@
 
         <ng-container *ngIf="totalCurrentStories === 0">
           <p>Vous n'avez commencé aucune histoire pour le moment. Vous pouvez en débuter une nouvelle à travers notre générateur d'histoires en cliquant sur le bouton ci-dessous.</p>
-          <button>Nouvelle histoire</button>
+          <button type="button" class="btn btn-lg btn-dark m-2">Nouvelle histoire</button>
         </ng-container>
 
         <ng-container *ngIf="totalCurrentStories > 0">
@@ -35,13 +35,13 @@
   <div class="new-story" id="new-story">
     <div class="row">
       <div class="col-12">
-        <h2>Nouvelle histoire</h2>
+        <h2 class="no-mb">Nouvelle histoire</h2>
       </div>
     </div>
     <div class="row pt-1rem">
       <div class="col-12">
         <p>Vous voulez vous lancer dans une nouvelle aventure ? Cliquez sur le bouton ci-dessous et laissez vous guider dans le générateur d'histoires.</p>
-        <button>Nouvelle histoire</button>
+        <button type="button" class="btn btn-lg btn-dark m-2">Nouvelle histoire</button>
       </div>
     </div>
 
