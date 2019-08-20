@@ -1,7 +1,8 @@
+
 <ng-container *ngIf="isHomePage">
   <!--HOME PAGE-->
   <div class="h-90vh segment first-segment" id="first-segment">
-    <h1 class="text-center">Le livre de rôles, réinventé.</h1>
+    <h2 class="text-center">Le livre de rôles, réinventé.</h2>
     <p class="blockquote text-center">Que vous soyez un grand enfant ou petit, vivez pleinement votre propre histoire.</p>
   </div>
 </ng-container>
@@ -10,11 +11,11 @@
   <!--WRITERS PAGE-->
   <div class="h-90vh segment">
     <h2 class="text-center">Pour les écrivains</h2>
-    <div class="text-justify">
-      <p>Écrivez vos histoire, ajouter les évènements qui peuvent alterner la quête, choisissez quels modules utiliser.
-         Proposez à vos lecteur une véritable expérience au cœur de vos ouvrages.</p>
+    <div class="text-justify lettrine">
+      <p>Ecrivez vos histoire, ajouter les évènements qui peuvent altérer la quête, choisissez quels modules utiliser.
+          Proposez à vos lecteurs une véritable expérience au cœur de vos ouvrages.</p>
       <p>Cette fonctionnalité est encore en cours de développement, restez au courant de toutes nos nouveautés en vous
-         inscrivant à notre newsletter !</p>
+          inscrivant à notre newsletter !</p>
     </div>
     <form [formGroup]="beOnTouchForm"class="col-12 mt-4">
       <div class="form-group">
@@ -45,34 +46,34 @@
         <tr>
           <th scope="col">Formule</th>
           <th scope="col">Accès</th>
-          <th scope="col">Tarif</th>
+          <th scope="col" width="20%">Tarif</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let spec of subscribeSpecs">
-          <th>{{ spec.name }}</th>
+          <th class="little-font">{{ spec.name }}</th>
           <td>
             <div class="font-weight-light little-font" *ngFor="let desc of spec.description">{{ desc.name }}</div>
           </td>
-          <td>{{ spec.price + '€ / mois' }}</td>
+          <td class="font-weight-light little-font">{{ spec.price + '€ / m' }}</td>
         </tr>
       </tbody>
     </table>
 
-    <h2 class="title-hardware">Matériels</h2>
+    <h4 class="title-hardware">Matériels</h4>
     <table class="table table-striped">
       <thead>
       <tr>
         <th scope="col">Matériel</th>
         <th scope="col">Description</th>
-        <th scope="col">Tarif</th>
+        <th scope="col" width="20%">Tarif</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let spec of hardwareSpecs">
-        <th scope="row">{{ spec.name }}</th>
-        <td class="little-font">{{ spec.description }}</td>
-        <td>{{ spec.price + '€' }}</td>
+        <th class="little-font">{{ spec.name }}</th>
+        <td class="font-weight-light little-font">{{ spec.description }}</td>
+        <td class="font-weight-light little-font">{{ spec.price + ' €' }}</td>
       </tr>
       </tbody>
     </table>

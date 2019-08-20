@@ -10,10 +10,18 @@
   font-family: $work-sans, $sans-serif;
 }
 
+.grey {
+  background-color: $grey!important;
+}
+
 h2 {
   margin-bottom: 30px;
-  font-family: $cabin, $sans-serif;
+  font-family: 'Lexend Deca', sans-serif;
   text-transform: uppercase;
+}
+
+td, th {
+  padding: 6px !important;
 }
 
 ul {

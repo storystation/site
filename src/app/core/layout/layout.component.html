@@ -1,4 +1,12 @@
-<app-nav></app-nav>
-<div class="container h-90vh primary-container mt-4" id="primary-container">
-  <router-outlet></router-outlet>
+
+<div *ngIf="isLoading" [ngClass]="{'fade': isLoading}" class="row splash grey">
+  <!-- SPLASH SCREEN -->
+    <div class="joystick col-sm-12 m-auto"></div>
+</div>
+
+<div *ngIf="!isLoading">
+  <app-nav></app-nav>
+  <div class="container h-90vh primary-container mt-4" id="primary-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
