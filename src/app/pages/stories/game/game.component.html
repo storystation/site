@@ -32,7 +32,7 @@
   </div>
   <div class="row" style="margin-top: 1rem;">
     <div class="col-12">
-      <p class="text-center h3"><countdown [config]="{leftTime: 30}">$!m!:$!s!$!s-ext!</countdown></p>
+      <p class="text-center h3"><countdown [config]="{leftTime: 2}" (finished)="onFinished()">$!m!:$!s!$!s-ext!</countdown></p>
     </div>
   </div>
 </div>
