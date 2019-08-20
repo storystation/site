@@ -1,7 +1,7 @@
 <div class="div-login" id="div-login">
   <h2 class="text-center">Connexion</h2>
   <div class="d-flex justify-content-center align-items-center container">
-      <form [formGroup]="loginForm" class="col-12 text-center">
+      <form [formGroup]="loginForm" class="col-lg-6 col-sm-12 text-center">
         <div class="form-group">
           <label for="validationEmailPseudo" required>Email / Pseudo</label>
           <input type="text" formControlName="emailPseudo" class="form-control text-center" id="validationEmailPseudo"
@@ -24,17 +24,13 @@
     
     
         <div class="container mt-4">
-          <div class="row justify-content-center">
-            <button class="btn btn-lg btn-dark mb-3" (click)="login()"
+            <button class="btn btn-lg btn-dark m-2" (click)="login()"
                     [ngClass]="{ 'is-loading is-loading-sm': isLogin }"
                     [disabled]="isLogin || loginForm.invalid">
               Se connecter
             </button>
-          </div>
       
-          <div class="row justify-content-center">
-            <button class="btn btn-lg btn-dark" routerLink="/register">S'enregistrer</button>
-          </div>
+            <button class="btn btn-lg btn-dark m-2" routerLink="/register">S'enregistrer</button>
         </div>
     
       </form>

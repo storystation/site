@@ -10,7 +10,7 @@
         <ng-container *ngFor="let menu of menus">
           <li data-toggle="collapse" data-target=".navbar-collapse.show">
             <a class="nav-item nav-link href text-right mr-3" [routerLink]="menu.url"
-               *ngIf="(isLogged === menu.display_when_logged && isLogged !== menu.display_when_not_logged)
+                *ngIf="(isLogged === menu.display_when_logged && isLogged !== menu.display_when_not_logged)
                       || (menu.display_when_logged && menu.display_when_not_logged)">
               {{ menu.name }}
             </a>
