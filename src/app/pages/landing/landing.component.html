@@ -1,11 +1,4 @@
-
-<ng-container *ngIf="isHomePage">
-  <!--HOME PAGE-->
-  <div class="h-90vh segment first-segment" id="first-segment">
-    <h2 class="text-center">Le livre de rôles, réinventé.</h2>
-    <p class="blockquote text-center">Que vous soyez un grand enfant ou petit, vivez pleinement votre propre histoire.</p>
-  </div>
-</ng-container>
+<button *ngIf="Pwa.promptEvent" (click)="installPwa()">Install</button>
 
 <ng-container *ngIf="isWritersPage">
   <!--WRITERS PAGE-->

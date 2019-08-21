@@ -5,7 +5,8 @@ import { LandingComponent } from './landing.component';
 export const landingRoutes: Routes = [
   {
     path: '',
-    component: LandingComponent
+    redirectTo: '/stories',
+    pathMatch: 'full'
   },
   {
     path: 'prices',
