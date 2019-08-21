@@ -7,6 +7,7 @@ import { SwUpdate } from '@angular/service-worker';
   providedIn: 'root'
 })
 export class PwaService {
+  promptEvent;
   constructor(
     private swUpdate: SwUpdate,
     private snackbar: MatSnackBar
@@ -14,13 +15,15 @@ export class PwaService {
     !this.swUpdate.isEnabled ? console.warn('SW Not enabled') : console.log('SW Enabled');
 
     this.swUpdate.available.subscribe(evt => {
-      const snack = this.snackbar.open('Mise à jour disponible', 'Reload');
+      const snack = this.snackbar.open('Une mise à jour est disponible', 'Recharger');
       snack.onAction().subscribe(() => {
         window.location.reload();
       });
-      /*snack.setTimeout(() => {
-       snack.dismiss();
-       }, 6000);*/
+      snack._dismissAfter(6000);
+    });
+
+    window.addEventListener('beforeinstallprompt', event => {
+      this.promptEvent = event;
     });
   }
 }

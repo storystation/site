@@ -1,3 +1,5 @@
+<button *ngIf="Pwa.promptEvent" (click)="installPwa()">Install</button>
+
 <ng-container *ngIf="isHomePage">
   <!--HOME PAGE-->
   <div class="h-90vh segment first-segment" id="first-segment">

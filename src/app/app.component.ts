@@ -7,7 +7,7 @@ import { PwaService } from './services/pwa.service';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent{
   constructor(
     private Pwa: PwaService
   ) {}

@@ -119,4 +119,8 @@ export class LandingComponent implements OnInit {
   beOnTouch() {
     this.isBeOnTouch = true;
   }
+
+  installPwa(): void {
+    this.Pwa.promptEvent.prompt();
+  }
 }
