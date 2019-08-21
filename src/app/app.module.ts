@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,11 +10,12 @@ import { environment } from '../environments/environment';
 
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
+import { MatSnackBarModule } from '@angular/material';
 
+@Injectable()
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  bootstrap: [AppComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,9 +23,9 @@ import { PagesModule } from './pages/pages.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     CoreModule,
-    PagesModule
+    PagesModule,
+    MatSnackBarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule {}
