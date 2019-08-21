@@ -23,7 +23,7 @@ export class LandingComponent implements OnInit {
       description: [
         { name: 'Un compte personnel' },
         { name: 'Une nouvelle aventure qui commence pour vous' },
-        { name: 'Accès à 2 histoires par mois' }
+        { name: '2 histoires par mois' }
       ],
       price: 0
     },
@@ -31,8 +31,8 @@ export class LandingComponent implements OnInit {
       name: 'Explorateur',
       description: [
         { name: 'Un compte personnel' },
-        { name: 'Accès à 5 histoires par mois' },
-        { name: 'Passage priorisé lors d\'appels d\'aide' },
+        { name: '5 histoires par mois' },
+        { name: 'Support prioritaire' },
         { name: 'Sans publicités' }
       ],
       price: 5
@@ -41,9 +41,9 @@ export class LandingComponent implements OnInit {
       name: 'Berzerk',
       description: [
         { name: 'Un compte personnel' },
-        { name: 'Accès à illimité à toutes les histoires du catalogue' },
+        { name: 'Accès illimité à toutes les histoires' },
         { name: 'Une soif d\'histoire innepuisable' },
-        { name: 'Passage priorisé lors d\'appels d\'aide' },
+        { name: 'Support prioritaire' },
         { name: 'Sans publicités' }
       ],
       price: 10
@@ -51,10 +51,10 @@ export class LandingComponent implements OnInit {
     {
       name: 'Dynastie',
       description: [
-        { name: 'Jusqu\'à 4 comptes gérés par un compte parent' },
-        { name: 'Accès illimité à toutes les histoires du catalogue' },
+        { name: '4 comptes' },
+        { name: 'Accès illimité à toutes les histoires' },
         { name: 'Si vous en avez assez de lire des livres à vos enfants, laissez les faire' },
-        { name: 'Passage priorisé lors d\'appels d\'aide' },
+        { name: 'Support prioritaire' },
         { name: 'Sans publicités' }
       ],
       price: 15

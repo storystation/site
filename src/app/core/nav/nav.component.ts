@@ -15,16 +15,16 @@ export class NavComponent implements OnInit {
 
   menus: Menu[] = [
     {
-      name: 'Tarifs',
-      url: '/prices',
-      display_when_logged: true,
-      display_when_not_logged: false
+      name: 'Connexion',
+      url: '/login',
+      display_when_logged: false,
+      display_when_not_logged: true
     },
     {
-      name: 'Écrivains',
-      url: '/writers',
-      display_when_logged: true,
-      display_when_not_logged: false
+      name: 'Inscription',
+      url: '/register',
+      display_when_logged: false,
+      display_when_not_logged: true
     },
     {
       name: 'Mes histoires',
@@ -33,22 +33,23 @@ export class NavComponent implements OnInit {
       display_when_not_logged: false
     },
     {
-      name: 'Déconnexion',
-      url: '/logout',
+      name: 'Tarifs',
+      url: '/prices',
       display_when_logged: true,
       display_when_not_logged: false
     },
     {
-      name: 'Connexion',
-      url: '/login',
-      display_when_logged: false,
-      display_when_not_logged: true
+      name: 'Contribution',
+      url: '/writers',
+      display_when_logged: true,
+      display_when_not_logged: false
     },
+
     {
-      name: 'Commencer',
-      url: '/register',
-      display_when_logged: false,
-      display_when_not_logged: true
+      name: 'Déconnexion',
+      url: '/logout',
+      display_when_logged: true,
+      display_when_not_logged: false
     }
   ];
 
