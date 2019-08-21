@@ -1,35 +1,32 @@
-<div class="div-user-stories" id="div-user-stories">
+<div class="div-user-stories col-lg-8 mx-auto" id="div-user-stories">
   <h2 class="text-center">Histoires</h2>
   <p class="text-center">Commencez une nouvelle histoire ou bien reprenez là où vous en étiez.</p>
-  <div class="current-stories mb-1rem" id="current-stories">
-    <div class="row">
-      <div class="col-lg-8 col-s-12">
-        <h3>Histoires en cours</h3>
-      </div>
-      <div class="col-lg-4 col-s-12">
-        <small *ngIf="!storiesLimits">{{ totalCurrentStories }} histoires en cours.</small>
-        <small *ngIf="storiesLimits && storiesLeft === 0">{{ totalCurrentStories }} histoires en cours. Vous avez atteint la limite et ne pouvez plus commencer d'histoires pour ce mois.</small>
-        <small *ngIf="storiesLimits && storiesLeft > 0">{{ totalCurrentStories }} histoires en cours. Il vous reste {{ storiesLeft }} histoires disponibles pour ce mois.</small>
-      </div>
+
+  <div class="current-stories" id="current-stories">
+
+    <h3>Histoires en cours</h3>
+
+    <div class="">
+      <p class="font-weight-light" *ngIf="!storiesLimits">{{ totalCurrentStories }} histoires en cours.</p>
+      <p class="font-weight-light" *ngIf="storiesLimits && storiesLeft === 0">{{ totalCurrentStories }} histoires en cours. Vous avez atteint la limite et ne pouvez plus commencer d'histoires pour ce mois.</p>
+      <p class="font-weight-light" *ngIf="storiesLimits && storiesLeft > 0">{{ totalCurrentStories }} histoires en cours. Il vous reste {{ storiesLeft }} histoires disponibles pour ce mois.</p>
     </div>
-    <div class="row pt-1rem">
-      <div class="col-12">
 
-        <ng-container *ngIf="totalCurrentStories === 0">
-          <p>Vous n'avez commencé aucune histoire pour le moment. Vous pouvez en débuter une nouvelle à travers notre générateur d'histoires en cliquant sur le bouton ci-dessous.</p>
-          <button type="button" class="btn btn-lg btn-dark m-2">Nouvelle histoire</button>
-        </ng-container>
+    <div class="">
+      <ng-container *ngIf="totalCurrentStories === 0">
+        <p>Vous n'avez commencé aucune histoire pour le moment. Vous pouvez en débuter une nouvelle à travers notre générateur d'histoires en cliquant sur le bouton ci-dessous.</p>
+        <button type="button" class="btn btn-lg btn-outline-primary">Nouvelle histoire</button>
+      </ng-container>
 
-        <ng-container *ngIf="totalCurrentStories > 0">
-          <ul>
-            <li>Histoire 01 (Dernière sauvegarde le 01/01/2001)</li>
-            <li>Histoire 02 (Dernière sauvegarde le 01/01/2001)</li>
-            <li>Histoire 03 (Dernière sauvegarde le 01/01/2001)</li>
-          </ul>
-        </ng-container>
-
-      </div>
+      <ng-container *ngIf="totalCurrentStories > 0">
+        <ul>
+          <li>Histoire 01 (Dernière sauvegarde le 01/01/2001)</li>
+          <li>Histoire 02 (Dernière sauvegarde le 01/01/2001)</li>
+          <li>Histoire 03 (Dernière sauvegarde le 01/01/2001)</li>
+        </ul>
+      </ng-container>
     </div>
+
   </div>
 
   <div class="new-story" id="new-story">
@@ -41,7 +38,7 @@
     <div class="row pt-1rem">
       <div class="col-12">
         <p>Vous voulez vous lancer dans une nouvelle aventure ? Cliquez sur le bouton ci-dessous et laissez vous guider dans le générateur d'histoires.</p>
-        <button type="button" class="btn btn-lg btn-dark m-2">Nouvelle histoire</button>
+        <button type="button" class="btn btn-lg btn-outline-primary">Nouvelle histoire</button>
       </div>
     </div>
 

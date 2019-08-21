@@ -15,9 +15,33 @@
 }
 
 h2 {
+  font-size: 28px;
+  letter-spacing: 5px;
   margin-bottom: 30px;
   font-family: 'Lexend Deca', sans-serif;
   text-transform: uppercase;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
+  border: 2px solid #a91628 !important;
+  color: #a91628 !important;
+  border-radius: 30px;
+  background: white !important;
+  box-shadow: none !important;
+}
+
+input {
+  background-color: rgba(169, 22, 40, 0.05) !important;
+  border: none !important;
+  color: black !important
+}
+
+.form-control::-webkit-input-placeholder {
+  color: black;
 }
 
 td, th {

@@ -1,9 +1,22 @@
 nav {
-  border-bottom: 2px solid #F19289;
+  background-color: #a91628 !important;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
-.navbar-light .navbar-toggler {
-  border: none !important;
+.navbar-brand {
+  font-weight: lighter;
+  letter-spacing: 5px;
+}
+
+nav a {
+  color: white !important;
+  font-weight: lighter;
+}
+
+.navbar-toggler {
+    box-shadow: none !important;
+    outline: 0px !important;
+    border: none;
 }
 
 .navbar-toggler .navbar-toggler-icon {
