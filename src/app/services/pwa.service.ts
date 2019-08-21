@@ -6,7 +6,7 @@ import { SwUpdate } from '@angular/service-worker';
 @Injectable({
   providedIn: 'root'
 })
-export class UpdateService {
+export class PwaService {
   constructor(
     private swUpdate: SwUpdate,
     private snackbar: MatSnackBar

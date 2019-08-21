@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UpdateService } from './services/update.service';
+import { PwaService } from './services/pwa.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { UpdateService } from './services/update.service';
 
 export class AppComponent {
   constructor(
-    private update: UpdateService
+    private update: PwaService
   ) {}
   title = 'Storystation';
 }
