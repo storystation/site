@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UpdateService } from '../../services/update.service';
 
 @Component({
   selector: 'app-landing',
@@ -64,13 +65,13 @@ export class LandingComponent implements OnInit {
     {
       name: 'Speech box',
       description: 'L\'élément indispensable pour pouvoir utiliser l\'application, lire, vivre les histoires et greffer ' +
-          'des modules dessus pour que votre histoire soit toujours plus immersive.',
+        'des modules dessus pour que votre histoire soit toujours plus immersive.',
       price: 200
     },
     {
       name: 'Sonar',
       description: 'Pouvoir passer des obstacles juste avec vos mouvements, impossible ? Pas avec le sonar. Passez des falaises, faites' +
-          ' d\'autres trucs cool aussi.',
+        ' d\'autres trucs cool aussi.',
       price: 150
     },
     {
@@ -81,14 +82,14 @@ export class LandingComponent implements OnInit {
     {
       name: 'Manche (pas encore disponible)',
       description: 'Tirez le manche, secouez le, faites lui faire des vas et viens, vous sentez cette sensation ? Cette sensation ' +
-          'd\'avoir évacué toute la frustration de cet ennemi qui vous barrait la route ? Grâce à votre parfaite imitation des mouvements' +
-          ' d\'épée, vous avez su surpasser cet obstacle aussi !',
+        'd\'avoir évacué toute la frustration de cet ennemi qui vous barrait la route ? Grâce à votre parfaite imitation des mouvements' +
+        ' d\'épée, vous avez su surpasser cet obstacle aussi !',
       price: 30
     },
     {
       name: 'Sirène',
       description: 'Vous entendez le son très fin 8 bit de cet instrument ? Vous sentez la nostalgie vous envahir ? C\'est plus fort ' +
-          'que vous, vous avez envie d\'aller plus loin avec ce buzzer, comme vous voulez, mais attention à ce qui pourrait arriver.',
+        'que vous, vous avez envie d\'aller plus loin avec ce buzzer, comme vous voulez, mais attention à ce qui pourrait arriver.',
       price: 20
     },
   ];
@@ -96,8 +97,9 @@ export class LandingComponent implements OnInit {
   snapshot: any;
 
   constructor(
-      private formBuilder: FormBuilder,
-      private activatedRoute: ActivatedRoute
+    private formBuilder: FormBuilder,
+    private activatedRoute: ActivatedRoute,
+    public Pwa: UpdateService
   ) {
     this.snapshot = this.activatedRoute.snapshot;
   }
