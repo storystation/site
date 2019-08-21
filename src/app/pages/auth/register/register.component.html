@@ -40,7 +40,6 @@
         <div class="form-group">
           <!-- <label for="validationPasswordCheck" required>Confirmer le mot de passe</label> -->
           <input type="password" class="form-control text-center" id="validationPasswordCheck"
-                 placeholder="Confirmer le mot de passe"
                  formControlName="passwordCheck"
                  [ngClass]="{ 'is-invalid': passwordCheck.invalid && (passwordCheck.dirty || passwordCheck.touched) }">
           <div *ngIf="passwordCheck.invalid && (passwordCheck.dirty || passwordCheck.touched)" class="invalid-feedback">
