@@ -67,8 +67,7 @@
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <label for="validationEmail" required>Email</label>
-          <input type="email" class="form-control text-center" id="validationEmail" placeholder="Email"
-                 formControlName="email"
+          <input type="email" class="form-control text-center" id="validationEmail" formControlName="email"
                  [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
             Cet email n'est pas valide
@@ -78,8 +77,7 @@
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <label for="validationPseudo" required>Pseudo</label>
-          <input type="text" class="form-control text-center" id="validationPseudo" placeholder="Pseudo"
-                 formControlName="pseudo"
+          <input type="text" class="form-control text-center" id="validationPseudo" formControlName="pseudo"
                  [ngClass]="{ 'is-invalid': pseudo.invalid && (pseudo.dirty || pseudo.touched) }"
                  (change)="verifyPseudo()">
           <div *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)" class="invalid-feedback">
@@ -90,8 +88,7 @@
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <label for="validationPassword" required>Mot de passe</label>
-          <input type="password" class="form-control text-center" id="validationPassword" placeholder="Mot de passe"
-                 formControlName="password"
+          <input type="password" class="form-control text-center" id="validationPassword" formControlName="password"
                  [ngClass]="{ 'is-invalid': password.invalid && (password.dirty || password.touched) }">
           <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
             Ce mot de passe est incorrect, il doit contenir au moins 8 caractères
@@ -102,7 +99,6 @@
         <div class="form-group">
           <label for="validationPasswordCheck" required>Confirmer le mot de passe</label>
           <input type="password" class="form-control text-center" id="validationPasswordCheck"
-                 placeholder="Confirmer le mot de passe"
                  formControlName="passwordCheck"
                  [ngClass]="{ 'is-invalid': passwordCheck.invalid && (passwordCheck.dirty || passwordCheck.touched) }">
           <div *ngIf="passwordCheck.invalid && (passwordCheck.dirty || passwordCheck.touched)" class="invalid-feedback">
@@ -112,9 +108,8 @@
       </div>
     </div>
     <div class="container text-center mt-2">
-      <button class="btn btn-lg btn-dark m-2" (click)="register()"
-              [ngClass]="{ 'is-loading is-loading-sm': isRegister }"
-              [disabled]="isRegister || registerForm.invalid">
+      <button class="btn btn-lg btn-dark m-2" (click)="register()" [disabled]="isRegister || registerForm.invalid"
+              [ngClass]="{ 'is-loading is-loading-sm': isRegister }">
         S'enregistrer
       </button>
     </div>
