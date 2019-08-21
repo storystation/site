@@ -9,7 +9,7 @@ import { PwaService } from './services/pwa.service';
 
 export class AppComponent {
   constructor(
-    private update: PwaService
+    private Pwa: PwaService
   ) {}
   title = 'Storystation';
 }
