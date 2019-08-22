@@ -36,6 +36,8 @@ export class RequestService {
   protected post(path: string, data: any) {
     return new Observable((observer) => {
       this.http.post(environment.API_PATH + path, data).subscribe(response => {
+        console.log(response);
+      debugger;
         observer.next(response);
       });
     });

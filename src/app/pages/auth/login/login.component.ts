@@ -27,13 +27,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
     const credentials = {login: 'test@postman.com', password: 'test'};
     const request = this.authService.login(credentials);
-
     request.subscribe(response => {
       console.log(response);
     });
-
   }
 }

@@ -8,7 +8,7 @@ import { RequestService } from './request.service';
 })
 export class AuthService extends RequestService {
 
-  startPath = '/auth/';
+  protected startPath = '/auth/';
 
   constructor(
     protected http: HttpClient
