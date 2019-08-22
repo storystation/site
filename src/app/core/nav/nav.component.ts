@@ -11,7 +11,7 @@ import Menu from '../../../shared/interfaces/menu';
 export class NavComponent implements OnInit {
   environment = environment;
 
-  isLogged = false;
+  isLogged = true;
 
   menus: Menu[] = [
     {

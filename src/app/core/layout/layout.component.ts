@@ -7,13 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  isLoading = false;
-
   constructor() {}
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 4000);
-  }
+  ngOnInit() {}
 }
