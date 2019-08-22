@@ -4,13 +4,15 @@ nav {
 }
 
 .navbar-brand {
-  font-weight: lighter;
-  letter-spacing: 5px;
+  color: white !important;
+  font-weight: bolder;
+  letter-spacing: 4px;
 }
 
-nav a {
+.navbar-nav a {
   color: white !important;
   font-weight: lighter;
+  letter-spacing: 2px;
 }
 
 .navbar-toggler {
@@ -27,4 +29,14 @@ nav a {
 .collapsed .navbar-toggler-icon {
   background-image: url(../../../assets/icons/logo-left.png) !important;
   width: 23px;
+}
+
+.logo-lg {
+  margin-bottom: 7px;
+}
+
+@media all and (orientation: portrait) {
+  .logo-lg {
+    display: none;
+  }
 }
