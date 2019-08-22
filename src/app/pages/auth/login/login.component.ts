@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -27,10 +28,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const credentials = {login: 'test@postman.com', password: 'test'};
-    const request = this.authService.login(credentials);
+    const request = this.authService.login({login: this.emailPseudo.value, password: this.password.value});
     request.subscribe(response => {
-      console.log(response);
+      if (response) {
+        // @ts-ignore
+        document.cookie = 't=' + response.token + ';';
+      } else {
+        console.error('Mot de passe ou identifiant incorrect');
+      }
     });
   }
 }
