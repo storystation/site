@@ -57,6 +57,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
     // Set here if the user is logged or not
+    console.log('chargé');
   }
 
 }
