@@ -14,8 +14,11 @@
 
       <ng-container *ngFor="let menu of menus">
         <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link href text-right mr-3" (click)="logout()" *ngIf="((menu.slug === 'logout') && (menu.display_when_logged === isLogged))">
+            {{ menu.name }}
+          </a>
           <a class="nav-link href text-right mr-3" [routerLink]="menu.url"
-             *ngIf="(isLogged === menu.display_when_logged && isLogged !== menu.display_when_not_logged) || (menu.display_when_logged && menu.display_when_not_logged)">
+             *ngIf="((isLogged === menu.display_when_logged && isLogged !== menu.display_when_not_logged) || (menu.display_when_logged && menu.display_when_not_logged)) && menu.slug !== 'logout'">
             {{ menu.name }}
           </a>
         </li>

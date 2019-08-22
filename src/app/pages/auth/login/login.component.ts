@@ -32,7 +32,8 @@ export class LoginComponent implements OnInit {
     request.subscribe(response => {
       if (response) {
         // @ts-ignore
-        document.cookie = 't=' + response.token + ';';
+        localStorage.setItem('t', response.token);
+        window.location.href = '/';
       } else {
         console.error('Mot de passe ou identifiant incorrect');
       }

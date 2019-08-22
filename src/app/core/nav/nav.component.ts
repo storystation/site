@@ -17,30 +17,35 @@ export class NavComponent implements OnInit {
     {
       name: 'Connexion',
       url: '/login',
+      slug: 'login',
       display_when_logged: false,
       display_when_not_logged: true
     },
     {
       name: 'Inscription',
       url: '/register',
+      slug: 'register',
       display_when_logged: false,
       display_when_not_logged: true
     },
     {
       name: 'Mes histoires',
       url: '/stories',
+      slug: 'stories',
       display_when_logged: true,
       display_when_not_logged: false
     },
     {
       name: 'Tarifs',
       url: '/prices',
+      slug: 'prices',
       display_when_logged: true,
       display_when_not_logged: false
     },
     {
       name: 'Contribution',
       url: '/writers',
+      slug: 'writers',
       display_when_logged: true,
       display_when_not_logged: false
     },
@@ -48,16 +53,22 @@ export class NavComponent implements OnInit {
     {
       name: 'Déconnexion',
       url: '/logout',
+      slug: 'logout',
       display_when_logged: true,
-      display_when_not_logged: false
+      display_when_not_logged: false,
     }
   ];
 
   constructor() {}
 
   ngOnInit() {
-    // Set here if the user is logged or not
-    console.log('chargé');
+    if (localStorage.getItem('t')) {
+      this.isLogged = true;
+    }
   }
 
+  logout() {
+    localStorage.removeItem('t');
+    window.location.reload();
+  }
 }
