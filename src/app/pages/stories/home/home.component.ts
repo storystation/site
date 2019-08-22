@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (!localStorage.getItem('t')) {
+      window.location.href = '/login';
+    }
   }
 
 }
