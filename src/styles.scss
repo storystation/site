@@ -26,12 +26,19 @@ h3 {
   font-size: 21px;
 }
 
-.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
+.btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
   border: 2px solid #a91628 !important;
   color: #a91628 !important;
   border-radius: 30px;
   background: white !important;
   box-shadow: none !important;
+}
+
+.btn-outline-primary:hover {
+  border: 2px solid #a91628 !important;
+  color: white !important;
+  border-radius: 30px;
+  background: #a91628 !important;
 }
 
 input {
