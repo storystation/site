@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-game-module',
@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardGameModuleComponent implements OnInit {
 
-  constructor() { }
+  @Input() isColorButtons: boolean;
+  @Input() isRadar: boolean;
+
+  isActivated: boolean;
+
+  constructor() {}
 
   ngOnInit() {
+    this.isActivated = false;
+    console.log('isColorButtons :', this.isColorButtons);
+    console.log('isRadar :', this.isRadar);
   }
+
+    onFinished() {
+    console.log('Temps imparti dépassé');
+  }
+
+    moduleActivated() {
+      this.isActivated = true;
+    }
 
 }
