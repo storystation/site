@@ -1,3 +1,4 @@
+@import "shared/styles/_card";
 @import "shared/styles/_colors";
 @import "shared/styles/_elements";
 @import "shared/styles/_fonts-families";
@@ -65,4 +66,49 @@ ul {
 
 .little-font {
   font-size: 14px
+}
+
+.red {
+  color: #a91628;
+}
+
+.quote {
+  position: relative;
+}
+
+.quote:before {
+  position: absolute;
+  content: '“ ”';
+  color: #d7959d;
+  top: -8px;
+  width: 100px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  font-size: 37px;
+  height: 21px;
+}
+
+.text-quote {
+  font-size: 18px;
+  color: grey;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.btn-outline-primary-inverted, .btn-outline-primary:hover, .btn-outline-primary-inverted:active, .btn-outline-primary-inverted:visited, .btn-outline-primary-inverted:focus {
+  border: 2px solid #a91628 !important;
+  color: white !important;
+  border-radius: 30px;
+  background: #a91628  !important;
+  box-shadow: none !important;
+}
+
+.btn-outline-primary-inverted:hover {
+  border: 2px solid #a91628 !important;
+  color: #a91628 !important;
+  border-radius: 30px;
+  background: white  !important;
+  box-shadow: none !important;
 }
