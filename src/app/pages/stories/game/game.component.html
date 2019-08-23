@@ -1,38 +1,47 @@
+<app-card-game-choices></app-card-game-choices>
+
 <h1>Exemples de cartes de jeu</h1>
 
-<div class="card p-1rem">
-  <div class="row">
-    <div class="col-12">
-      <!--On peut imaginer ici le titre de l'histoire-->
-      <h2 class="history-title" id="history-title">La troupe du caméléon</h2>
+<div class="card text-center">
+  <h2 class="card-header text-uppercase red">
+    L'invasion
+  </h2>
+  <div class="card-body">
+    <div class="col-lg-8 mx-auto">
+      <hr class="quote">
+       <p class="text-italic text-quote">Mickael décide de s'aventurer dans l'usine.<br>Il se retrouve face à un zombie sans bras.</p>
+      <hr>
+    </div>
+    <p class="card-text col-lg-8 mt-4 mx-auto">Peu d'issues s'offrent à lui.</p>
+    <div class="container mt-4">
+      <a href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">Prendre l'ascenseur</a>
+      <a href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">Sauter par la fenêtre</a>
+      <a href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">Attaquer le zombie</a>
     </div>
   </div>
-  <div class="row">
-    <div id="situation" class="col-12">
-      <p id="situation-content">Mickael se retrouve soudainement face à un choix compliqué, à quelle troupe offrir le cadeau empoisonné ?</p>
+</div>
+
+<div class="card text-center">
+  <h2 class="card-header text-uppercase red">
+    L'invasion
+  </h2>
+  <div class="card-body col-lg-8 mx-auto">
+    <div>
+      <hr class="quote">
+      <p class="text-italic text-quote">Mickael décide de s'aventurer dans l'usine.<br>Il se retrouve face à un zombie sans bras.</p>
+      <hr>
     </div>
-    <div class="col-12" id="help">
-      <small id="help-content" class="text-center">Utilisez votre module si vous en disposez d'un, sinon, vous pouvez toujours utiliser les couleurs sur votre écran.</small>
+
+    <p class="card-text mt-4">Il s'engrouffre dans l'ascenceur mais réalise qu'il ne fonctionne qu'avec un code couleur.</p>
+
+    <div class="alert alert-danger card-text mx-auto mt-4 col-lg-9 red">
+        <p>Un module va s'activer sur la board.<br>Vous aurez 15 secondes pour le désamorcer.</p>
+        <a href="#" class="btn btn-outline-primary-inverted row m-2 col-lg-4">Activer</a>
     </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-3">
-      <div class="button-choice red" aria-label="Bouton rouge" title="Bouton rouge" id="red"></div>
-    </div>
-    <div class="col-3">
-      <div class="button-choice blue" aria-label="Bouton bleu" title="Bouton bleu" id="blue"></div>
-    </div>
-    <div class="col-3">
-      <div class="button-choice green" aria-label="Bouton vert" title="Bouton vert" id="green"></div>
-    </div>
-    <div class="col-3">
-      <div class="button-choice yellow" aria-label="Bouton jaune" title="Bouton jaune" id="yellow"></div>
-    </div>
-  </div>
-  <div class="row" style="margin-top: 1rem;">
-    <div class="col-12">
-      <p class="text-center h3"><countdown [config]="{leftTime: 2}" (finished)="onFinished()">$!m!:$!s!$!s-ext!</countdown></p>
+
+    <div class="alert alert-danger card-text mx-auto mt-4 col-lg-9 red">
+        <p>Mélange les couleurs pour reproduire celle de la diode.</p>
+        <p class="text-center h3"><countdown [config]="{leftTime: 15}" (finished)="onFinished()">$!m!:$!s!$!s-ext!</countdown></p>
     </div>
   </div>
 </div>
