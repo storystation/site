@@ -3,6 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MatSnackBarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,6 @@ import { environment } from '../environments/environment';
 
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
-import { MatSnackBarModule } from '@angular/material';
 
 @Injectable()
 @NgModule({
@@ -24,7 +25,8 @@ import { MatSnackBarModule } from '@angular/material';
     BrowserAnimationsModule,
     CoreModule,
     PagesModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
 })

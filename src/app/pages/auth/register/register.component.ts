@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { AuthService } from '../../../services/auth.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,7 +17,10 @@ export class RegisterComponent implements OnInit {
   password = new FormControl('', [Validators.required, Validators.minLength(8)]);
   passwordCheck = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -31,7 +36,14 @@ export class RegisterComponent implements OnInit {
     if (this.password.value !== this.passwordCheck.value) {
       console.log('ça c\'est pas bon');
     } else {
-      console.log('action');
+      const request = this.authService.register({ username: this.pseudo.value, email: this.email.value, password: this.password.value });
+      request.subscribe(response => {
+        if (response) {
+          // @ts-ignore
+          localStorage.setItem('t', response.tokens[0]);
+          window.location.href = '/';
+        }
+      });
     }
   }
 

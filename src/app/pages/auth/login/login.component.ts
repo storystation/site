@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { AuthService } from '../../../services/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
       private formBuilder: FormBuilder,
+      private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -25,7 +28,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this.isLogin = true;
-    console.log('action');
+    const request = this.authService.login({login: this.emailPseudo.value, password: this.password.value});
+    request.subscribe(response => {
+      if (response) {
+        // @ts-ignore
+        localStorage.setItem('t', response.token);
+        window.location.href = '/';
+      } else {
+        console.error('Mot de passe ou identifiant incorrect');
+      }
+    });
   }
 }
