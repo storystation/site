@@ -2,11 +2,14 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const serverAddress = '192.168.33.109';
+
 export const environment = {
   production: false,
   SERVER_HOST: '',
-  API_PATH: 'http://192.168.33.109:3333',
-  APP_HOST: 'http://localhost:4200'
+  SERVER_WEBSOCKET: 'ws://' + serverAddress + '/ws',
+  API_PATH: 'http://' + serverAddress,
+  APP_HOST: 'http://localhost:4200',
 };
 
 /*

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
+import { webSocket } from 'rxjs/webSocket';
 
 import { environment } from '../../../environments/environment';
 import Menu from '../../../shared/interfaces/menu';
@@ -12,6 +14,7 @@ export class NavComponent implements OnInit {
   environment = environment;
 
   isLogged = false;
+  subject = webSocket(environment.SERVER_WEBSOCKET + '/game');
 
   menus: Menu[] = [
     {
@@ -58,13 +61,25 @@ export class NavComponent implements OnInit {
       display_when_not_logged: false,
     }
   ];
-
   constructor() {}
 
   ngOnInit() {
     if (localStorage.getItem('t')) {
       this.isLogged = true;
     }
+
+    // this.subject.subscribe(() => this.subject.next('msg to the server'));
+
+    this.subject.subscribe(
+      msg => console.log('message received: ' + msg), // Called whenever there is a message from the server.
+      err => console.log(err) // Called if at any point WebSocket API signals some kind of error.
+      // () => console.log('Connection closed') // Called when connection is closed (for whatever reason).
+    );
+
+    // this.subject.subscribe();
+    this.subject.next({ type: 'echo' });
+    // this.subject.complete();
+    this.subject.error({ code: 4000, reason: 'Broken' });
   }
 
   logout() {
