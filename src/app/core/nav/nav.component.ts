@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { $WebSocket, WebSocketSendMode } from 'angular2-websocket/angular2-websocket';
 
 import { environment } from '../../../environments/environment';
 import Menu from '../../../shared/interfaces/menu';
@@ -10,8 +9,7 @@ import Menu from '../../../shared/interfaces/menu';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  // environment = environment;
-  ws = new $WebSocket(environment.SERVER_WEBSOCKET + '/game');
+  ws = new WebSocket(environment.SERVER_WEBSOCKET + '/game');
 
   isLogged = false;
 
@@ -62,32 +60,21 @@ export class NavComponent implements OnInit {
   ];
 
   constructor() {
+    /**
+     * Send message
+     * @param event The data sent
+     */
+    this.ws.onopen = (event) => {
+      this.ws.send(JSON.stringify({ type: 'echo' }));
+    };
 
-    this.ws.send(JSON.stringify({ type: 'echo' })).subscribe(
-      (msg) => {
-        console.log('next', msg.data);
-      },
-      (error) => {
-        console.error(error);
-        console.log('Force close connection to the websocket server.');
-        this.ws.close(true);
-      },
-      () => {
-        console.log('complete');
-        // this.ws.close(false);
-      }
-    );
-
-    /*this.ws.send(JSON.stringify({ type: 'echo' }), WebSocketSendMode.Promise).then(
-      (T) => {
-        console.log('is send');
-      },
-      (T) => {
-        console.log('not send');
-      }
-    );*/
-
-    // this.ws.send({ type: 'echo' });
+    /**
+     * Retrieves message
+     * @param event The data received
+     */
+    this.ws.onmessage = (event) => {
+      console.log(event);
+    };
   }
 
   ngOnInit() {
