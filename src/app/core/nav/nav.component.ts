@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment } from '../../../environments/environment';
+// import { environment } from '../../../environments/environment';
 import Menu from '../../../shared/interfaces/menu';
 
 @Component({
@@ -9,8 +9,6 @@ import Menu from '../../../shared/interfaces/menu';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  ws = new WebSocket(environment.SERVER_WEBSOCKET + '/game');
-
   isLogged = false;
 
   menus: Menu[] = [
@@ -59,23 +57,7 @@ export class NavComponent implements OnInit {
     }
   ];
 
-  constructor() {
-    /**
-     * Send message
-     * @param event The data sent
-     */
-    this.ws.onopen = (event) => {
-      this.ws.send(JSON.stringify({ type: 'echo' }));
-    };
-
-    /**
-     * Retrieves message
-     * @param event The data received
-     */
-    this.ws.onmessage = (event) => {
-      console.log(event);
-    };
-  }
+  constructor() {}
 
   ngOnInit() {
     if (localStorage.getItem('t')) {
