@@ -69,6 +69,8 @@ export class NavComponent implements OnInit {
       },
       (error) => {
         console.error(error);
+        console.log('Force close connection to the websocket server.');
+        this.ws.close(true);
       },
       () => {
         console.log('complete');
