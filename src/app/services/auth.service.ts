@@ -33,6 +33,4 @@ export class AuthService extends RequestService {
   register(credentials) {
     return this.post(this.startPath + 'register', credentials);
   }
-
-  logout() {}
 }
