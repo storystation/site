@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { $WebSocket, WebSocketSendMode } from 'angular2-websocket/angular2-websocket';
 
 import { environment } from '../../../environments/environment';
 import Menu from '../../../shared/interfaces/menu';
@@ -9,8 +10,8 @@ import Menu from '../../../shared/interfaces/menu';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  environment = environment;
-  // environment.SERVER_WEBSOCKET + '/game'
+  // environment = environment;
+  ws = new $WebSocket(environment.SERVER_WEBSOCKET + '/game');
 
   isLogged = false;
 
@@ -59,7 +60,33 @@ export class NavComponent implements OnInit {
       display_when_not_logged: false,
     }
   ];
-  constructor() {}
+
+  constructor() {
+
+    this.ws.send(JSON.stringify({ type: 'echo' })).subscribe(
+      (msg) => {
+        console.log('next', msg.data);
+      },
+      (error) => {
+        console.error(error);
+      },
+      () => {
+        console.log('complete');
+        // this.ws.close(false);
+      }
+    );
+
+    /*this.ws.send(JSON.stringify({ type: 'echo' }), WebSocketSendMode.Promise).then(
+      (T) => {
+        console.log('is send');
+      },
+      (T) => {
+        console.log('not send');
+      }
+    );*/
+
+    // this.ws.send({ type: 'echo' });
+  }
 
   ngOnInit() {
     if (localStorage.getItem('t')) {
