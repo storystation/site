@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { GameService } from '../../services/game.service';
 
 @Component({
@@ -16,6 +18,7 @@ export class CardGameCharacterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private gameService: GameService
   ) {}
 
@@ -31,15 +34,15 @@ export class CardGameCharacterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('ici');
-    /*const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
-    request.subscribe(response => {
-      if (response) {
-        console.log('données enregistrées');
-      } else {
-        console.error('oh oh');
-      }
-    });*/
-  }
+    this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
 
+    // const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
+    // request.subscribe(response => {
+    //   if (response) {
+    //     console.log('données enregistrées');
+    //   } else {
+    //     console.error('oh oh');
+    //   }
+    // });
+  }
 }

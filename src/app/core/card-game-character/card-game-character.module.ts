@@ -1,9 +1,10 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardGameCharacterComponent } from './card-game-character.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
+import { CardGameCharacterComponent } from './card-game-character.component';
 
 @NgModule({
   declarations: [CardGameCharacterComponent],
@@ -11,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
+    RouterModule,
     ReactiveFormsModule,
     HttpClientModule
   ]
