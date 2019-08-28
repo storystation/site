@@ -183,6 +183,6 @@ export class GameComponent implements OnInit {
     });
 
     // Checks if there is an answer table, if so, displays the game component with the buttons, otherwise displays another game component
-    this.moduleDataComponent.answers.length > 0 ? this.isChoices = true : this.isModule = true;
+    this.moduleDataComponent._type.length > 0 ? this.isModule = true : this.isChoices = true;
   }
 }

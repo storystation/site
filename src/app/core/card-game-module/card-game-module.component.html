@@ -7,13 +7,15 @@
       <hr>
     </div>
 
-    <a (click)="moduleActivated()" class="btn btn-lg btn-outline-primary-inverted mt-2 href" *ngIf="!launchModule">
+    <a (click)="moduleActivated()"
+      class="btn btn-lg btn-outline-primary-inverted mt-2 href"
+      *ngIf="!launchModule">
       Activer le module
     </a>
 
     <div *ngIf="launchModule" class="alert alert-danger card-text mx-auto mt-4 col-lg-9 red">
       <p class="text-center h3">
-        <countdown [config]="{leftTime: moduleContent.time_max}" (finished)="onFinished()">$!m!:$!s!$!s-ext!</countdown>
+        <countdown [config]="{leftTime: moduleContent.time_max}" (finished)="onFinished('KO')">$!m!:$!s!$!s-ext!</countdown>
       </p>
     </div>
   </div>
