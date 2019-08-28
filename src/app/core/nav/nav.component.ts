@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment } from '../../../environments/environment';
+// import { environment } from '../../../environments/environment';
 import Menu from '../../../shared/interfaces/menu';
 
 @Component({
@@ -9,8 +9,6 @@ import Menu from '../../../shared/interfaces/menu';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  environment = environment;
-
   isLogged = false;
 
   menus: Menu[] = [
