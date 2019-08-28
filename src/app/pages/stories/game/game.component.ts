@@ -123,7 +123,7 @@ export class GameComponent implements OnInit {
     }
   ];
   // currentStory = this.story[0];
-  currentStory = JSON.parse(localStorage.getItem('story'))[0];
+  currentStory = JSON.parse(localStorage.getItem('story'));
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.isColorButtons = false;
@@ -137,7 +137,7 @@ export class GameComponent implements OnInit {
   ngOnInit() {
     // localStorage.setItem('story', JSON.stringify(this.story));
     this.setCurrentComponent();
-    console.log(JSON.parse(localStorage.getItem('story')));
+    // console.log(JSON.parse(localStorage.getItem('story')));
     // this.definesGameColorsAvailable();
   }
 
