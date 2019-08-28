@@ -2,8 +2,16 @@
     <h2 class="card-header text-uppercase red">
         L'invasion
     </h2>
-    <div class="alert card-text mx-auto my-4 col-lg-9 red" [ngClass]="success ? 'alert-success text-dark' : 'alert-danger'">
-        sgskjlglskng sdgjsdgln
+    <div class="card-body col-lg-8 mx-auto my-4">
+        <div class="alert card-text red" [ngClass]="success ? 'alert-success text-dark' : 'alert-danger'">
+            sgskjlglskng sdgjsdgln
+        </div>
+
+        <a
+            (click)="moduleActivated()"
+            class="btn btn-lg btn-outline-primary-inverted row mt-2">
+            {{ resultBtn }}
+        </a>
     </div>
 </div>
 

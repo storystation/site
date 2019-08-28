@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class CardGameFateComponent implements OnInit {
 
   success: boolean;
+  resultBtn: string;
 
   constructor() {
     this.success = true;
   }
 
   ngOnInit() {
+    this.resultBtn = this.success ? "Suite de l'histoire" : "Retour à l'accueil";
   }
 
 }
