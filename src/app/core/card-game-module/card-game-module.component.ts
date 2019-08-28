@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'app-card-game-module',
   templateUrl: './card-game-module.component.html',
@@ -12,6 +14,7 @@ export class CardGameModuleComponent implements OnInit {
   @Input() story: any;
 
   launchModule: boolean;
+  ws: any;
 
   constructor() {
     this.launchModule = false;
@@ -27,6 +30,11 @@ export class CardGameModuleComponent implements OnInit {
 
   moduleActivated() {
     console.log('activation du module');
+
+    console.log('Ouverture connexion WS');
+    this.ws = new WebSocket(environment.SERVER_WEBSOCKET + '/ws/game');
+
+
     this.launchModule = true;
   }
 
