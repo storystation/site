@@ -145,15 +145,38 @@ export class GameComponent implements OnInit {
     lastUrl.path === 'create' ? this.isCharacter = true : this.setGameComponent();
   }
 
+  replaceTextByName(keyModule: string) {
+    const heroName = this.currentStory.character_name;
+    const heroToReplace = '%character_name%';
+    const compName = this.currentStory.companion_name;
+    const compToReplace = '%character_companion%';
+    let description = this.currentStory.modules[keyModule].description;
+
+    this.currentStory.modules[keyModule].description = description.replace(heroToReplace, heroName);
+    description = description.replace(heroToReplace, heroName);
+    this.currentStory.modules[keyModule].description = description.replace(compToReplace, compName);
+    description = description.replace(compToReplace, compName);
+
+    if (this.currentStory.modules[keyModule].answers !== undefined) {
+      this.currentStory.modules[keyModule].answers.forEach((choice, key) => {
+        let message = choice.text;
+        this.currentStory.modules[keyModule].answers[key].text = message.replace(heroToReplace, heroName);
+        message = message.replace(heroToReplace, heroName);
+        this.currentStory.modules[keyModule].answers[key].text = message.replace(compToReplace, compName);
+        message = message.replace(compToReplace, compName);
+      });
+    }
+  }
+
   /**
    * Set the game component to use
    */
   setGameComponent() {
-    // console.log(this.currentStory);
-
-    this.currentStory.modules.forEach((element, key) => { // Define the module to be used in the moduleContent variable
-      if (element.position === this.currentStory.stage) {
+    this.currentStory.modules.forEach((module, key) => { // Define the module to be used in the moduleContent variable
+      if (module.position === this.currentStory.stage) {
         this.moduleDataComponent = this.currentStory.modules[key];
+        // @ts-ignore
+        this.replaceTextByName(key);
       }
     });
     // console.log(this.moduleDataComponent);
