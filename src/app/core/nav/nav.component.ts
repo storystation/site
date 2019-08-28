@@ -46,7 +46,6 @@ export class NavComponent implements OnInit {
       display_when_logged: true,
       display_when_not_logged: false
     },
-
     {
       name: 'Déconnexion',
       url: '/logout',
