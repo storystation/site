@@ -9,8 +9,10 @@ import { GameService } from '../../services/game.service';
 })
 export class CardGameCharacterComponent implements OnInit {
   characterForm: FormGroup;
-  characterName = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  companionName = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  characterName = new FormControl('');
+  companionName = new FormControl('');
+  // characterName = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  // companionName = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,14 +31,15 @@ export class CardGameCharacterComponent implements OnInit {
   }
 
   onSubmit() {
-    const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
+    console.log('ici');
+    /*const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
     request.subscribe(response => {
       if (response) {
         console.log('données enregistrées');
       } else {
         console.error('oh oh');
       }
-    });
+    });*/
   }
 
 }
