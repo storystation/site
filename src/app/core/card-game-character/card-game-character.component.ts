@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { GameService } from '../../services/game.service';
 
 @Component({
@@ -9,10 +11,14 @@ import { GameService } from '../../services/game.service';
 })
 export class CardGameCharacterComponent implements OnInit {
   characterForm: FormGroup;
-  characterName = new FormControl('', [Validators.required]);
-  companionName = new FormControl('', [Validators.required]);
+  characterName = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  companionName = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
-  constructor(private formBuilder: FormBuilder, private gameService: GameService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private gameService: GameService
+  ) {}
 
   ngOnInit() {
     this.characterForm = this.formBuilder.group({
@@ -21,19 +27,18 @@ export class CardGameCharacterComponent implements OnInit {
     });
   }
 
-  get f() { return this.characterForm.controls; }
+  get f() {
+    return this.characterForm.controls;
+  }
 
   onSubmit() {
-    console.log(this.characterName.value);
-    console.log(this.companionName.value);
-    const request = this.gameService.saveCharacter({character_name: this.characterName.value, companion_name: this.companionName.value});
+    const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
     request.subscribe(response => {
       if (response) {
-        console.log('données enregistrées');
+        this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
       } else {
         console.error('oh oh');
       }
     });
   }
-
 }
