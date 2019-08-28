@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { environment } from '../../../../environments/environment';
+// import { environment } from '../../../../environments/environment';
 import Story from '../../../../shared/interfaces/story';
 
 @Component({
@@ -11,8 +11,6 @@ import Story from '../../../../shared/interfaces/story';
 })
 export class GameComponent implements OnInit {
 
-  isColorButtons: boolean;
-  isRadar: boolean;
   isModule: boolean;
   isChoices: boolean;
   isCharacter: boolean;
@@ -126,8 +124,6 @@ export class GameComponent implements OnInit {
   currentStory = JSON.parse(localStorage.getItem('story'));
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.isColorButtons = false;
-    this.isRadar = false;
     this.isModule = false;
     this.isChoices = false;
     this.isCharacter = false;
@@ -187,6 +183,6 @@ export class GameComponent implements OnInit {
     });
 
     // Checks if there is an answer table, if so, displays the game component with the buttons, otherwise displays another game component
-    this.moduleDataComponent.answers !== undefined ? this.isChoices = true : this.isModule = true;
+    this.moduleDataComponent.answers.length > 0 ? this.isChoices = true : this.isModule = true;
   }
 }

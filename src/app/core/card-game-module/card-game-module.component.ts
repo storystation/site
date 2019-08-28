@@ -26,14 +26,13 @@ export class CardGameModuleComponent implements OnInit {
 
   onFinished() {
     console.log('Temps imparti dépassé');
+    console.log('Fermeture de la connexion WS');
+    this.ws.close();
   }
 
   moduleActivated() {
-    console.log('activation du module');
-
     console.log('Ouverture connexion WS');
     this.ws = new WebSocket(environment.SERVER_WEBSOCKET + '/ws/game');
-
     this.launchModule = true;
   }
 
