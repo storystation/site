@@ -11,14 +11,14 @@ export class CardGameModuleComponent implements OnInit {
   @Input() moduleContent: any;
   @Input() story: any;
 
-  isActivated: boolean;
+  launchModule: boolean;
 
   constructor() {
+    this.launchModule = false;
   }
 
   ngOnInit() {
-    console.log(this.moduleContent);
-    this.isActivated = false;
+    this.replaceTextByName();
   }
 
   onFinished() {
@@ -27,7 +27,29 @@ export class CardGameModuleComponent implements OnInit {
 
   moduleActivated() {
     console.log('activation du module');
-    this.isActivated = true;
+    this.launchModule = true;
   }
 
+  replaceTextByName() {
+    const heroName = this.moduleContent.character_name;
+    const heroToReplace = '%character_name%';
+    const compName = this.moduleContent.companion_name;
+    const compToReplace = '%character_companion%';
+    let description = this.moduleContent.description;
+
+    this.moduleContent.description = description.replace(heroToReplace, heroName);
+    description = description.replace(heroToReplace, heroName);
+    this.moduleContent.description = description.replace(compToReplace, compName);
+    description = description.replace(compToReplace, compName);
+
+    if (this.moduleContent.answers !== undefined) {
+      this.moduleContent.answers.forEach((choice, key) => {
+        let message = choice.text;
+        this.moduleContent.answers[key].text = message.replace(heroToReplace, heroName);
+        message = message.replace(heroToReplace, heroName);
+        this.moduleContent.answers[key].text = message.replace(compToReplace, compName);
+        message = message.replace(compToReplace, compName);
+      });
+    }
+  }
 }

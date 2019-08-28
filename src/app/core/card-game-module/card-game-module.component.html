@@ -7,9 +7,11 @@
       <hr>
     </div>
 
-    <a (click)="moduleActivated()" class="btn btn-outline-primary-inverted row m-2 col-lg-4">Activer module</a>
+    <a (click)="moduleActivated()" class="btn btn-outline-primary-inverted row m-2 col-lg-4" *ngIf="!launchModule">
+      Activer module
+    </a>
 
-    <div *ngIf="isActivated" class="alert alert-danger card-text mx-auto mt-4 col-lg-9 red">
+    <div *ngIf="launchModule" class="alert alert-danger card-text mx-auto mt-4 col-lg-9 red">
       <p class="text-center h3">
         <countdown [config]="{leftTime: moduleContent.time_max}" (finished)="onFinished()">$!m!:$!s!$!s-ext!</countdown>
       </p>
