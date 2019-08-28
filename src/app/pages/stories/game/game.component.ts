@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { environment } from '../../../../environments/environment';
 
@@ -16,7 +17,7 @@ export class GameComponent implements OnInit {
   isCharacter: boolean;
   isFate: boolean;
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute) {
     this.isColorButtons = false;
     this.isRadar = false;
     this.isModule = false;
@@ -33,6 +34,9 @@ export class GameComponent implements OnInit {
    * Set the correct component to display helped by the route
    */
   setCurrentComponent() {
-
+    const lastUrl = this.activatedRoute.snapshot.url[1];
+    if (lastUrl.path === 'create') {
+      this.isCharacter = true;
+    }
   }
 }
