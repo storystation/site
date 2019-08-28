@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
     stories.subscribe(res => {
       if (res) {
         this.stories = res as Array<any>;
+        // @ts-ignore
         this.totalCurrentStories = res.length;
       }
     });
