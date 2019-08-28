@@ -184,7 +184,6 @@ export class GameComponent implements OnInit {
         this.replaceTextByName(key);
       }
     });
-    // console.log(this.moduleDataComponent);
 
     // Checks if there is an answer table, if so, displays the game component with the buttons, otherwise displays another game component
     if (this.moduleDataComponent.answers !== undefined) {

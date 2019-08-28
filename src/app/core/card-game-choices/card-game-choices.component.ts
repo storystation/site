@@ -30,4 +30,8 @@ export class CardGameChoicesComponent implements OnInit {
     });
   }
 
+  onclick(elementId) {
+    console.log(elementId);
+  }
+
 }
