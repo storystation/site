@@ -5,7 +5,7 @@ export default interface Story {
   user_id: number;
   title: string;
   character_name: string;
-  modules: Module;
+  modules: Module[];
   companion_name: string;
   life: number;
   stage: number;
