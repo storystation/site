@@ -1,4 +1,3 @@
-import WinCondition from './win-condition';
 import Answer from './answer';
 
 export default interface Module {
