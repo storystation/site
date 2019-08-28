@@ -37,11 +37,10 @@ export class CardGameChoicesComponent implements OnInit {
    *
    * @param elementId The element clicked, can be reached with his id
    */
-  clickButton(elementId) {
+  clickButton(element) {
     const localStorageJson = JSON.parse(localStorage.getItem('story'));
-    localStorageJson.stage++; // Increment the stage by 1
+    localStorageJson.stage = element.destination; // Increment the stage by 1
     localStorage.setItem('story', JSON.stringify(localStorageJson));
     window.location.href = '/stories/game';
-    // this.router.navigate(['stories/game']).then(r => console.log('Suite'));
   }
 }

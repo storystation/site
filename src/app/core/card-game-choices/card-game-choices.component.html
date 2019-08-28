@@ -8,7 +8,7 @@
     </div>
     <div class="container mt-2">
       <a *ngFor="let button of buttons; let i = index" class="href btn btn-lg btn-outline-primary-inverted m-2"
-         [id]="'choice_button_' + i" (click)="clickButton('choice_button_' + i)">
+         [id]="'choice_button_' + i" (click)="clickButton(button)">
         {{ button.name }}
       </a>
     </div>

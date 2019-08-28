@@ -14,7 +14,8 @@ export class CardGameModuleComponent implements OnInit {
   @Input() story: any;
 
   launchModule: boolean;
-  ws: any;
+  ws: WebSocket;
+  ping: any;
 
   constructor() {
     this.launchModule = false;
@@ -24,16 +25,52 @@ export class CardGameModuleComponent implements OnInit {
     this.replaceTextByName();
   }
 
-  onFinished() {
-    console.log('Temps imparti dépassé');
-    console.log('Fermeture de la connexion WS');
+  onFinished(result) {
+    clearInterval(this.ping);
     this.ws.close();
+
+    console.log(result);
+    const localStorageJson = JSON.parse(localStorage.getItem('story'));
+    if (result === 'OK') {
+      localStorageJson.stage = Number(this.moduleContent.response.success);
+    } else if (result === 'KO') {
+      localStorageJson.stage = Number(this.moduleContent.response.fail);
+    }
+    localStorage.setItem('story', JSON.stringify(localStorageJson));
+    window.location.href = '/stories/game';
   }
 
   moduleActivated() {
     console.log('Ouverture connexion WS');
-    this.ws = new WebSocket(environment.SERVER_WEBSOCKET + '/ws/game');
-    this.launchModule = true;
+    this.ws = new WebSocket(environment.SERVER_WEBSOCKET + '/game');
+
+    this.ws.onmessage = e => {
+      const data = JSON.parse(e.data);
+      if (data.type === 'end_module' && data.target === 'site') {
+        this.onFinished(data.message.status);
+      }
+    };
+
+    this.ws.onopen = () => {
+
+      this.ping = setInterval(() => { this.ws.send('[ping]'); }, 10000);
+
+      const message = {
+        type: 'init_module',
+        sender: 'site',
+        message: {
+          position: this.moduleContent.position,
+          time_max: this.moduleContent.time_max,
+          win_condition: this.moduleContent.win_condition,
+          type: this.moduleContent._type
+        }
+      };
+
+      console.log('Sending init message.');
+      this.ws.send(JSON.stringify(message));
+
+      this.launchModule = true;
+    };
   }
 
   replaceTextByName() {
