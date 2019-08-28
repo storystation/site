@@ -11,10 +11,8 @@ import { GameService } from '../../services/game.service';
 })
 export class CardGameCharacterComponent implements OnInit {
   characterForm: FormGroup;
-  characterName = new FormControl('');
-  companionName = new FormControl('');
-  // characterName = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  // companionName = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  characterName = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  companionName = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,15 +32,13 @@ export class CardGameCharacterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
-
-    // const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
-    // request.subscribe(response => {
-    //   if (response) {
-    //     console.log('données enregistrées');
-    //   } else {
-    //     console.error('oh oh');
-    //   }
-    // });
+    const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
+    request.subscribe(response => {
+      if (response) {
+        this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
+      } else {
+        console.error('oh oh');
+      }
+    });
   }
 }
