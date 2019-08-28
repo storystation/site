@@ -15,12 +15,12 @@ export class GameComponent implements OnInit {
   isFate: boolean;
 
   constructor() {
-    this.isColorButtons = true;
-    this.isRadar = true;
-    this.isModule = true;
-    this.isChoices = true;
-    this.isCharacter = true;
-    this.isFate = true;
+    this.isColorButtons = false;
+    this.isRadar = false;
+    this.isModule = false;
+    this.isChoices = false;
+    this.isCharacter = false;
+    this.isFate = false;
   }
 
   ngOnInit() {}

@@ -9,6 +9,10 @@ export const storiesRoutes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'stories/create',
+    component: GameComponent
+  },
+  {
     path: 'stories/game',
     component: GameComponent
   }
