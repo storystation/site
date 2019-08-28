@@ -23,7 +23,7 @@ export class GameComponent implements OnInit {
     {
       _id: '5d6626d8188694e00498f8f8',
       user_id: 0,
-      title: 'Title test',
+      title: 'L\'évasion',
       character_name: 'Toto',
       modules: [
         {
@@ -145,6 +145,11 @@ export class GameComponent implements OnInit {
     lastUrl.path === 'create' ? this.isCharacter = true : this.setGameComponent();
   }
 
+  /**
+   * Replace the default strings %character_name% and %character_companion% by their real name.
+   *
+   * @param keyModule The correct key to find in modules array
+   */
   replaceTextByName(keyModule: string) {
     const heroName = this.currentStory.character_name;
     const heroToReplace = '%character_name%';
