@@ -12,7 +12,6 @@ export class CardGameChoicesComponent implements OnInit {
 
   @Input() moduleContent: any;
   @Input() story: any;
-  @Input() title: string;
 
   buttons: ChoiceButton[] = [];
 

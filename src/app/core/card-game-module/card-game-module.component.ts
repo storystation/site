@@ -5,27 +5,29 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './card-game-module.component.html',
   styleUrls: ['./card-game-module.component.scss']
 })
+
 export class CardGameModuleComponent implements OnInit {
 
-  @Input() isColorButtons: boolean;
-  @Input() isRadar: boolean;
-  @Input() jsonTest: any;
+  @Input() moduleContent: any;
+  @Input() story: any;
 
   isActivated: boolean;
 
-  constructor() {}
-
-  ngOnInit() {
-    this.isActivated = false;
-    console.log('isColorButtons :', this.isColorButtons);
+  constructor() {
   }
 
-    onFinished() {
+  ngOnInit() {
+    console.log(this.moduleContent);
+    this.isActivated = false;
+  }
+
+  onFinished() {
     console.log('Temps imparti dépassé');
   }
 
-    moduleActivated() {
-      this.isActivated = true;
-    }
+  moduleActivated() {
+    console.log('activation du module');
+    this.isActivated = true;
+  }
 
 }

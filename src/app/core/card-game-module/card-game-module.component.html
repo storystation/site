@@ -1,20 +1,17 @@
 <div class="card text-center">
-  <h2 class="card-header text-uppercase red">
-    L'invasion
-  </h2>
+  <h2 class="card-header text-uppercase red">{{ story.title }}</h2>
   <div class="card-body col-lg-8 mx-auto">
     <div>
       <hr class="quote">
-      <p class="text-italic text-quote">Mickael décide de s'aventurer dans l'usine.<br>Il se retrouve face à un zombie sans bras.</p>
+      <p class="text-italic text-quote">{{ moduleContent.description }}</p>
       <hr>
     </div>
 
     <a (click)="moduleActivated()" class="btn btn-outline-primary-inverted row m-2 col-lg-4">Activer module</a>
 
     <div *ngIf="isActivated" class="alert alert-danger card-text mx-auto mt-4 col-lg-9 red">
-      <p>Mélange les couleurs pour reproduire celle de la diode.</p>
       <p class="text-center h3">
-        <countdown [config]="{leftTime: 15}" (finished)="onFinished()">$!m!:$!s!$!s-ext!</countdown>
+        <countdown [config]="{leftTime: moduleContent.time_max}" (finished)="onFinished()">$!m!:$!s!$!s-ext!</countdown>
       </p>
     </div>
   </div>
