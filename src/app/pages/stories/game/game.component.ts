@@ -135,6 +135,8 @@ export class GameComponent implements OnInit {
   ngOnInit() {
     console.log(this.currentStory);
     this.setCurrentComponent();
+    console.log(JSON.parse(localStorage.getItem('story')));
+    // this.definesGameColorsAvailable();
   }
 
   /**
