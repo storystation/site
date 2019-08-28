@@ -39,7 +39,7 @@ export class CardGameChoicesComponent implements OnInit {
    */
   clickButton(elementId) {
     const localStorageJson = JSON.parse(localStorage.getItem('story'));
-    localStorageJson[0].stage++; // Increment the stage by 1
+    localStorageJson.stage++; // Increment the stage by 1
     localStorage.setItem('story', JSON.stringify(localStorageJson));
     window.location.href = '/stories/game';
     // this.router.navigate(['stories/game']).then(r => console.log('Suite'));
