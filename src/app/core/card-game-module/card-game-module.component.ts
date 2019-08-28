@@ -34,7 +34,6 @@ export class CardGameModuleComponent implements OnInit {
     console.log('Ouverture connexion WS');
     this.ws = new WebSocket(environment.SERVER_WEBSOCKET + '/ws/game');
 
-
     this.launchModule = true;
   }
 
