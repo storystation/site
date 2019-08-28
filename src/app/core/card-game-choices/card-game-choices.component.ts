@@ -30,8 +30,12 @@ export class CardGameChoicesComponent implements OnInit {
     });
   }
 
-  onclick(elementId) {
-    console.log(elementId);
-  }
+  /**
+   * Call when click on a choice button.
+   *
+   * @param elementId The element clicked, can be reached with his id
+   */
+  clickButton(elementId) {
 
+  }
 }
