@@ -142,8 +142,13 @@ export class GameComponent implements OnInit {
    */
   setCurrentComponent() {
     const lastUrl = this.activatedRoute.snapshot.url[1];
-    if (lastUrl.path === 'create') {
-      this.isCharacter = true;
-    }
+    lastUrl.path === 'create' ? this.isCharacter = true : this.setGameComponent();
+  }
+
+  /**
+   * Set the game component to use
+   */
+  setGameComponent() {
+    console.log('ici');
   }
 }
