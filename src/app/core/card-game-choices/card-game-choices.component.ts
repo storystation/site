@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import ChoiceButton from '../../../shared/interfaces/choice-button';
 
@@ -10,11 +11,12 @@ import ChoiceButton from '../../../shared/interfaces/choice-button';
 export class CardGameChoicesComponent implements OnInit {
 
   @Input() moduleContent: any;
+  @Input() story: any;
   @Input() title: string;
 
   buttons: ChoiceButton[] = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.setButtons(this.moduleContent.answers);
@@ -36,6 +38,10 @@ export class CardGameChoicesComponent implements OnInit {
    * @param elementId The element clicked, can be reached with his id
    */
   clickButton(elementId) {
-
+    const localStorageJson = JSON.parse(localStorage.getItem('story'));
+    localStorageJson[0].stage++; // Increment the stage by 1
+    localStorage.setItem('story', JSON.stringify(localStorageJson));
+    window.location.href = '/stories/game';
+    // this.router.navigate(['stories/game']).then(r => console.log('Suite'));
   }
 }

@@ -1,4 +1,4 @@
-<app-card-game-choices *ngIf='isChoices' [moduleContent]="moduleDataComponent" [title]="currentStory.title"></app-card-game-choices>
+<app-card-game-choices *ngIf='isChoices' [story]="currentStory" [moduleContent]="moduleDataComponent" [title]="currentStory.title"></app-card-game-choices>
 <app-card-game-module *ngIf='isModule' [isColorButtons]='isColorButtons' [isRadar]='isRadar' [jsonTest]='jsonTest'></app-card-game-module>
 <app-card-game-fate *ngIf='isFate'></app-card-game-fate>
 <app-card-game-character *ngIf='isCharacter'></app-card-game-character>

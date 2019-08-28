@@ -37,7 +37,7 @@ export class CardGameCharacterComponent implements OnInit {
       if (response) {
         this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
       } else {
-        console.error('oh oh');
+        console.error('Faux, essaie encore');
       }
     });
   }

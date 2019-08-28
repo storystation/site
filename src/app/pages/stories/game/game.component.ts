@@ -122,7 +122,8 @@ export class GameComponent implements OnInit {
       stage: 1
     }
   ];
-  currentStory = this.story[0];
+  // currentStory = this.story[0];
+  currentStory = JSON.parse(localStorage.getItem('story'))[0];
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.isColorButtons = false;
@@ -190,6 +191,7 @@ export class GameComponent implements OnInit {
     if (this.moduleDataComponent.answers !== undefined) {
       this.isChoices = true;
     } else {
+      console.log(this.moduleDataComponent);
       console.log('il y a pas de boutons');
     }
   }
