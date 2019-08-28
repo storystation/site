@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { environment } from '../../../../environments/environment';
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -23,5 +25,14 @@ export class GameComponent implements OnInit {
     this.isFate = false;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.setCurrentComponent();
+  }
+
+  /**
+   * Set the correct component to display helped by the route
+   */
+  setCurrentComponent() {
+
+  }
 }
