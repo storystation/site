@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardGameChoicesComponent implements OnInit {
 
   @Input() jsonTest: any;
+  @Input() characterName: string;
 
   clicks = [
     {
@@ -24,7 +25,6 @@ export class CardGameChoicesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('test :', this.jsonTest);
   }
 
 }
