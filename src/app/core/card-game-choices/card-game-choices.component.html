@@ -9,9 +9,7 @@
         <hr>
         </div>
         <div class="container mt-4">
-            <a href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">Prendre l'ascenseur</a>
-            <a href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">Sauter par la fenêtre</a>
-            <a href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">Attaquer le zombie</a>
+            <a *ngFor="let click of clicks" href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">{{ click.name }}</a>
         </div>
     </div>
 </div>

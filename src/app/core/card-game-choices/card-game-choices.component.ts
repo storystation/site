@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-game-choices',
@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardGameChoicesComponent implements OnInit {
 
+  @Input() jsonTest: any;
+
+  clicks = [
+    {
+      name: 'Couloir de gauche',
+    },
+    {
+      name: 'Couloir de droite',
+    },
+    {
+      name: 'Couloir du milieu',
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
+    console.log('test :', this.jsonTest);
   }
 
 }

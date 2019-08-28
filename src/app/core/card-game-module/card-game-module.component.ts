@@ -9,6 +9,7 @@ export class CardGameModuleComponent implements OnInit {
 
   @Input() isColorButtons: boolean;
   @Input() isRadar: boolean;
+  @Input() jsonTest: any;
 
   isActivated: boolean;
 
@@ -17,7 +18,6 @@ export class CardGameModuleComponent implements OnInit {
   ngOnInit() {
     this.isActivated = false;
     console.log('isColorButtons :', this.isColorButtons);
-    console.log('isRadar :', this.isRadar);
   }
 
     onFinished() {
