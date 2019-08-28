@@ -1,15 +1,13 @@
 <div class="card text-center">
-    <h2 class="card-header text-uppercase red">
-        L'invasion
-    </h2>
-    <div class="card-body">
-        <div class="col-lg-8 mx-auto">
-        <hr class="quote">
-            <p class="text-italic text-quote">Mickael décide de s'aventurer dans l'usine.<br>Il se retrouve face à un zombie sans bras.</p>
-        <hr>
-        </div>
-        <div class="container mt-4">
-            <a *ngFor="let click of clicks" href="#" class="btn btn-outline-primary m-2 col-lg-2 col-sm-4">{{ click.name }}</a>
-        </div>
+  <h2 class="card-header text-uppercase red">{{ title }}</h2>
+  <div class="card-body">
+    <div class="col-lg-8 mx-auto">
+      <hr class="quote">
+      <p class="text-italic text-quote">{{ moduleContent.description }}</p>
+      <hr>
     </div>
+    <div class="container mt-4">
+      <a *ngFor="let button of buttons" class="href btn btn-outline-primary m-2 col-lg-2 col-sm-4">{{ button.name }}</a>
+    </div>
+  </div>
 </div>

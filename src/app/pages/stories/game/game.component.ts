@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
   isChoices: boolean;
   isCharacter: boolean;
   isFate: boolean;
+  moduleDataComponent: any; // The module data for the game component to display
 
   story: Story[] = [
     {
@@ -133,7 +134,6 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.currentStory);
     this.setCurrentComponent();
   }
 
@@ -149,6 +149,20 @@ export class GameComponent implements OnInit {
    * Set the game component to use
    */
   setGameComponent() {
-    console.log('ici');
+    // console.log(this.currentStory);
+
+    this.currentStory.modules.forEach((element, key) => { // Define the module to be used in the moduleContent variable
+      if (element.position === this.currentStory.stage) {
+        this.moduleDataComponent = this.currentStory.modules[key];
+      }
+    });
+    // console.log(this.moduleDataComponent);
+
+    // Checks if there is an answer table, if so, displays the game component with the buttons, otherwise displays another game component
+    if (this.moduleDataComponent.answers !== undefined) {
+      this.isChoices = true;
+    } else {
+      console.log('il y a pas de boutons');
+    }
   }
 }

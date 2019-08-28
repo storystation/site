@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import ChoiceButton from '../../../shared/interfaces/choice-button';
+
 @Component({
   selector: 'app-card-game-choices',
   templateUrl: './card-game-choices.component.html',
@@ -7,24 +9,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardGameChoicesComponent implements OnInit {
 
-  @Input() jsonTest: any;
+  @Input() moduleContent: any;
+  @Input() title: string;
 
-  clicks = [
-    {
-      name: 'Couloir de gauche',
-    },
-    {
-      name: 'Couloir de droite',
-    },
-    {
-      name: 'Couloir du milieu',
-    }
-  ];
+  buttons: ChoiceButton[] = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    console.log('test :', this.jsonTest);
+    this.setButtons(this.moduleContent.answers);
+  }
+
+  /**
+   * Fill the buttons to response
+   * @param answers The answers available
+   */
+  setButtons(answers: any) {
+    answers.forEach((element) => {
+      this.buttons.push({name: element.text, destination: element.destination});
+    });
   }
 
 }
