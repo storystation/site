@@ -17,12 +17,13 @@ export class GameComponent implements OnInit {
   isChoices: boolean;
   isCharacter: boolean;
   isFate: boolean;
+  moduleDataComponent: any; // The module data for the game component to display
 
   story: Story[] = [
     {
       _id: '5d6626d8188694e00498f8f8',
       user_id: 0,
-      title: 'Title test',
+      title: 'L\'évasion',
       character_name: 'Toto',
       modules: [
         {
@@ -121,7 +122,8 @@ export class GameComponent implements OnInit {
       stage: 1
     }
   ];
-  currentStory = this.story[0];
+  // currentStory = this.story[0];
+  currentStory = JSON.parse(localStorage.getItem('story'))[0];
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.isColorButtons = false;
@@ -133,7 +135,7 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.currentStory);
+    // localStorage.setItem('story', JSON.stringify(this.story));
     this.setCurrentComponent();
     console.log(JSON.parse(localStorage.getItem('story')));
     // this.definesGameColorsAvailable();
@@ -148,9 +150,46 @@ export class GameComponent implements OnInit {
   }
 
   /**
+   * Replace the default strings %character_name% and %character_companion% by their real name.
+   *
+   * @param keyModule The correct key to find in modules array
+   */
+  replaceTextByName(keyModule: string) {
+    const heroName = this.currentStory.character_name;
+    const heroToReplace = '%character_name%';
+    const compName = this.currentStory.companion_name;
+    const compToReplace = '%character_companion%';
+    let description = this.currentStory.modules[keyModule].description;
+
+    this.currentStory.modules[keyModule].description = description.replace(heroToReplace, heroName);
+    description = description.replace(heroToReplace, heroName);
+    this.currentStory.modules[keyModule].description = description.replace(compToReplace, compName);
+    description = description.replace(compToReplace, compName);
+
+    if (this.currentStory.modules[keyModule].answers !== undefined) {
+      this.currentStory.modules[keyModule].answers.forEach((choice, key) => {
+        let message = choice.text;
+        this.currentStory.modules[keyModule].answers[key].text = message.replace(heroToReplace, heroName);
+        message = message.replace(heroToReplace, heroName);
+        this.currentStory.modules[keyModule].answers[key].text = message.replace(compToReplace, compName);
+        message = message.replace(compToReplace, compName);
+      });
+    }
+  }
+
+  /**
    * Set the game component to use
    */
   setGameComponent() {
-    console.log('ici');
+    this.currentStory.modules.forEach((module, key) => { // Define the module to be used in the moduleContent variable
+      if (module.position === this.currentStory.stage) {
+        this.moduleDataComponent = this.currentStory.modules[key];
+        // @ts-ignore
+        this.replaceTextByName(key);
+      }
+    });
+
+    // Checks if there is an answer table, if so, displays the game component with the buttons, otherwise displays another game component
+    this.moduleDataComponent.answers !== undefined ? this.isChoices = true : this.isModule = true;
   }
 }

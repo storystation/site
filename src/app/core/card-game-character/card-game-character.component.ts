@@ -9,6 +9,7 @@ import { GameService } from '../../services/game.service';
   templateUrl: './card-game-character.component.html',
   styleUrls: ['./card-game-character.component.scss']
 })
+
 export class CardGameCharacterComponent implements OnInit {
   characterForm: FormGroup;
   characterName = new FormControl('', [Validators.required, Validators.minLength(3)]);
@@ -45,7 +46,7 @@ export class CardGameCharacterComponent implements OnInit {
       if (response) {
         this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
       } else {
-        console.error('oh oh');
+        console.error('Faux, essaie encore');
       }
     });
   }
