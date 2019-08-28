@@ -19,11 +19,12 @@
       </ng-container> -->
 
       <ng-container *ngIf="totalCurrentStories > 0">
-        <ul>
-          <li>Histoire 01 (Dernière sauvegarde le 01/01/2001)</li>
-          <li>Histoire 02 (Dernière sauvegarde le 01/01/2001)</li>
-          <li>Histoire 03 (Dernière sauvegarde le 01/01/2001)</li>
-        </ul>
+        <h3>Jouer une histoire</h3>
+        <p *ngFor="let story of stories">{{story.title}}
+          <button class="btn btn-lg btn-outline-primary m-2" (click)="selectStory(story);">
+            Jouer
+          </button>
+        </p>
       </ng-container>
     </div>
 
