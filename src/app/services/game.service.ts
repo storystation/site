@@ -10,22 +10,16 @@ export class GameService extends RequestService {
 
   protected startPath = '/story/';
 
-  constructor(
-    protected http: HttpClient
-  ) {
+  constructor(protected http: HttpClient) {
     super(http);
   }
 
   /**
-   * Post character informations
+   * Post character information
    *
-   * @param character_info The object needs to be : {"characterName": "string", "companionName": "string"}
+   * @param charData The object needs to be : {"characterName": "string", "companionName": "string"}
    */
-  saveCharacter(character_info) {
-    console.log('test back character :', character_info);
-    return this.post(this.startPath + 'new_name', character_info);
+  saveCharacter(charData) {
+    return this.post(this.startPath + 'new_name', charData);
   }
-
-
-  logout() {}
 }
