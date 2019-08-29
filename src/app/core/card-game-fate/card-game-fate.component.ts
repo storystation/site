@@ -15,7 +15,7 @@ export class CardGameFateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.resultBtn = this.success ? "Suite de l'histoire" : "Retour à l'accueil";
+    this.resultBtn = this.success ? 'Suite de l\'histoire' : 'Retour à l\'accueil';
   }
 
 }
