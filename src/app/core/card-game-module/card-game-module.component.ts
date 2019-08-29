@@ -38,18 +38,19 @@ export class CardGameModuleComponent implements OnInit {
 
     this.isComplete = true;
     this.launchModule = false;
-
     if (result === 'OK') {
       this.gameOver = false;
-      const localStorageJson = JSON.parse(localStorage.getItem('story'));
-      localStorageJson.stage++;
-      localStorage.setItem('story', JSON.stringify(localStorageJson));
     } else if (result === 'KO') {
       this.gameOver = true;
     }
   }
 
   nextStep() {
+    if (!this.gameOver) {
+      const localStorageJson = JSON.parse(localStorage.getItem('story'));
+      localStorageJson.stage++;
+      localStorage.setItem('story', JSON.stringify(localStorageJson));
+    }
     this.gameOver ? this.redirectTo('/') : this.redirectTo('/stories/game');
   }
 
