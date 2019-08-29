@@ -15,6 +15,7 @@ export class GameComponent implements OnInit {
   isChoices: boolean;
   isCharacter: boolean;
   isFate: boolean;
+  gameOver: boolean;
   moduleDataComponent: any; // The module data for the game component to display
 
   story: Story[] = [
@@ -127,11 +128,14 @@ export class GameComponent implements OnInit {
     this.isModule = false;
     this.isChoices = false;
     this.isCharacter = false;
-    this.isFate = true; // TODO: To set false
+    this.isFate = false;
+    this.gameOver = false;
   }
 
   ngOnInit() {
     // localStorage.setItem('story', JSON.stringify(this.story[0]));
+    console.log(this.currentStory);
+    // console.log(this.moduleDataComponent);
     this.setCurrentComponent();
   }
 

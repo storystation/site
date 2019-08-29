@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import Menu from '../../../shared/interfaces/menu';
 
@@ -55,7 +56,9 @@ export class NavComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (localStorage.getItem('t')) {
@@ -65,6 +68,17 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('t');
-    window.location.reload();
+    this.redirectTo('/');
+  }
+
+  /**
+   * Redirect to an url, can reload a component
+   *
+   * @param url The url to redirect
+   */
+  redirectTo(url: string) {
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]).then(r => r);
+    });
   }
 }

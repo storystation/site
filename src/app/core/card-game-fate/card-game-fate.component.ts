@@ -10,35 +10,29 @@ export class CardGameFateComponent implements OnInit {
 
   @Input() moduleContent: any;
   @Input() story: any;
-
-  gameOver: boolean;
+  @Input() gameOver: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    // private routeReuseStrategy: RouteReuseStrategy
-  ) {
-    this.gameOver = false;
-  }
+  ) {}
 
   ngOnInit() {
     console.log(this.moduleContent);
   }
 
   nextStep() {
-    if (this.gameOver) {
-      this.router.navigate(['/']).then(r => console.log(r));
-    } else {
-      this.redirectTo('/stories/game');
-    }
+    this.gameOver ? this.redirectTo('/') : this.redirectTo('/stories/game');
   }
 
+  /**
+   * Redirect to an url, can reload a component
+   *
+   * @param url The url to redirect
+   */
   redirectTo(url: string) {
-    this.router.navigateByUrl('/CardGameComponent', { skipLocationChange: true }).then(
-      () => {
-        this.router.navigate([url]).then(r => r);
-      }
-    );
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]).then(r => r);
+    });
   }
-
 }

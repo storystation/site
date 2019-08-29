@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
 
@@ -17,7 +18,9 @@ export class CardGameModuleComponent implements OnInit {
   ws: WebSocket;
   ping: any;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.launchModule = false;
   }
 
@@ -29,7 +32,6 @@ export class CardGameModuleComponent implements OnInit {
     clearInterval(this.ping);
     this.ws.close();
 
-    console.log(result);
     const localStorageJson = JSON.parse(localStorage.getItem('story'));
     if (result === 'OK') {
       localStorageJson.stage = Number(this.moduleContent.response.success);
@@ -37,7 +39,7 @@ export class CardGameModuleComponent implements OnInit {
       localStorageJson.stage = Number(this.moduleContent.response.fail);
     }
     localStorage.setItem('story', JSON.stringify(localStorageJson));
-    window.location.href = '/stories/game';
+    this.redirectTo('/stories/game');
   }
 
   moduleActivated() {
@@ -94,5 +96,16 @@ export class CardGameModuleComponent implements OnInit {
         message = message.replace(compToReplace, compName);
       });
     }
+  }
+
+  /**
+   * Redirect to an url, can reload a component
+   *
+   * @param url The url to redirect
+   */
+  redirectTo(url: string) {
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]).then(r => r);
+    });
   }
 }

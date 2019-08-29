@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../../../services/auth.service';
 
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
       private formBuilder: FormBuilder,
-      private authService: AuthService
+      private authService: AuthService,
+      private router: Router
   ) {}
 
   ngOnInit() {
@@ -33,10 +35,21 @@ export class LoginComponent implements OnInit {
       if (response) {
         // @ts-ignore
         localStorage.setItem('t', response.token);
-        window.location.href = '/';
+        this.redirectTo('/');
       } else {
         console.error('Mot de passe ou identifiant incorrect');
       }
+    });
+  }
+
+  /**
+   * Redirect to an url, can reload a component
+   *
+   * @param url The url to redirect
+   */
+  redirectTo(url: string) {
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]).then(r => r);
     });
   }
 }

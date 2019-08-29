@@ -35,12 +35,23 @@ export class CardGameChoicesComponent implements OnInit {
   /**
    * Call when click on a choice button.
    *
-   * @param elementId The element clicked, can be reached with his id
+   * @param element The element clicked, can be reached with his id
    */
   clickButton(element) {
     const localStorageJson = JSON.parse(localStorage.getItem('story'));
     localStorageJson.stage = element.destination; // Increment the stage by 1
     localStorage.setItem('story', JSON.stringify(localStorageJson));
-    window.location.href = '/stories/game';
+    this.redirectTo('/stories/game');
+  }
+
+  /**
+   * Redirect to an url, can reload a component
+   *
+   * @param url The url to redirect
+   */
+  redirectTo(url: string) {
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]).then(r => r);
+    });
   }
 }
