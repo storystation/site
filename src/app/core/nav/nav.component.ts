@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import Menu from '../../../shared/interfaces/menu';
+import { DataSharingService } from '../../services/data-sharing.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +10,7 @@ import Menu from '../../../shared/interfaces/menu';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  isLogged = false;
+  isLogged: boolean;
 
   menus: Menu[] = [
     {
@@ -57,8 +58,13 @@ export class NavComponent implements OnInit {
   ];
 
   constructor(
-    private router: Router
-  ) {}
+    private router: Router,
+    private dataSharingService: DataSharingService
+  ) {
+    this.dataSharingService.isUserLoggedIn.subscribe( value => {
+      this.isLogged = value;
+    });
+  }
 
   ngOnInit() {
     if (localStorage.getItem('t')) {
@@ -68,7 +74,8 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('t');
-    this.redirectTo('/');
+    this.dataSharingService.isUserLoggedIn.next(false);
+    this.redirectTo('/login');
   }
 
   /**
