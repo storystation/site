@@ -1,3 +1,99 @@
+@import "./_colors";
+
+/*****
+==================
+### COLORS
+==================
+*****/
+.red {
+  color: $story-red;
+}
+
+.grey {
+  background-color: $grey !important;
+}
+
+/*****
+==================
+### BUTTONS
+==================
+*****/
+.btn {
+  font-size: 16px;
+}
+
+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+  border: 2px solid $story-red !important;
+  color: $story-red !important;
+  border-radius: 30px;
+  background: $white !important;
+  box-shadow: none !important;
+}
+
+.btn-outline-primary:hover {
+  border: 2px solid $story-red !important;
+  color: $white !important;
+  border-radius: 30px;
+  background: $story-red !important;
+}
+
+.btn-outline-primary-inverted,
+.btn-outline-primary-inverted:active,
+.btn-outline-primary-inverted:visited,
+.btn-outline-primary-inverted:focus {
+  border: 2px solid $story-red !important;
+  color: $white !important;
+  border-radius: 30px;
+  background: $story-red !important;
+  box-shadow: none !important;
+}
+
+.btn-outline-primary-inverted:hover {
+  border: 2px solid $story-red !important;
+  color: $story-red !important;
+  border-radius: 30px;
+  background: $white !important;
+  box-shadow: none !important;
+}
+
+/*****
+==================
+### QUOTES
+==================
+*****/
+.quote {
+  position: relative;
+}
+
+.quote:before {
+  position: absolute;
+  content: '“ ”';
+  color: $pink;
+  top: -8px;
+  width: 100px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-color: $white;
+  font-size: 37px;
+  height: 21px;
+}
+
+.text-quote {
+  font-size: 18px;
+  color: rgb(58, 58, 58);
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/*****
+==================
+### OTHER ELEMENTS
+==================
+*****/
 .href {
   cursor: pointer;
 }
@@ -12,4 +108,8 @@
 
 .block-display {
   display: block;
+}
+
+.little-font {
+  font-size: 14px
 }

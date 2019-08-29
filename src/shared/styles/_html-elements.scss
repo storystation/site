@@ -1,0 +1,36 @@
+@import "./_colors";
+@import "./_fonts-families";
+
+* {
+  font-family: $work-sans, $sans-serif;
+}
+
+body {
+  background-color: $background-light !important;
+}
+
+h2 {
+  font-size: 28px;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  font-family: 'Lexend Deca', sans-serif;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+input {
+  background-color: rgba(169, 22, 40, 0.05) !important;
+  border: none !important;
+  color: black !important
+}
+
+td, th {
+  padding: 6px !important;
+}
+
+ul {
+  list-style-type: none;
+}
