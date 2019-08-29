@@ -127,7 +127,7 @@ export class GameComponent implements OnInit {
     this.isModule = false;
     this.isChoices = false;
     this.isCharacter = false;
-    this.isFate = false;
+    this.isFate = true; // TODO: To set false
   }
 
   ngOnInit() {
