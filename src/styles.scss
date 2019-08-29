@@ -7,6 +7,10 @@
 @import "shared/styles/_paddings";
 @import "shared/styles/_widths";
 
+body {
+  background-color: #fafafa !important;
+}
+
 * {
   font-family: $work-sans, $sans-serif;
 }
