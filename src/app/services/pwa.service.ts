@@ -19,7 +19,7 @@ export class PwaService {
       snack.onAction().subscribe(() => {
         window.location.reload();
       });
-      snack._dismissAfter(6000);
+      snack._dismissAfter(20000);
     });
 
     window.addEventListener('beforeinstallprompt', event => {

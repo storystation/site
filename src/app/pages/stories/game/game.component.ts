@@ -18,7 +18,7 @@ export class GameComponent implements OnInit {
   gameOver: boolean;
   moduleDataComponent: any; // The module data for the game component to display
 
-  story: Story[] = [
+  /*story: Story[] = [
     {
       _id: '5d6626d8188694e00498f8f8',
       user_id: 0,
@@ -120,7 +120,7 @@ export class GameComponent implements OnInit {
       life: 3,
       stage: 1
     }
-  ];
+  ];*/
   // currentStory = this.story[0];
   currentStory = JSON.parse(localStorage.getItem('story'));
 
