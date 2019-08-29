@@ -2,8 +2,13 @@
     <h2 class="card-header text-uppercase red">
         L'invasion
     </h2>
-    <div class="card-body col-lg-8 mx-auto my-4">
-        <div class="alert card-text red" [ngClass]="success ? 'alert-success text-dark' : 'alert-danger'">
+    <div class="card-body col-lg-8 mx-auto">
+
+        <div class="row d-flex justify-content-center" [ngClass]="success ? 'hide' : ''">
+            <img src="../../../assets/icons/game-over.png" class="" alt="game_over" width="150px">
+        </div>
+
+        <div class="alert card-text red m-4" [ngClass]="success ? 'alert-success text-dark' : 'alert-danger'">
             sgskjlglskng sdgjsdgln
         </div>
 
