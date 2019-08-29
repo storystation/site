@@ -4,7 +4,10 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Share some data in different components
+ */
 export class DataSharingService {
-  constructor() { }
+  constructor() {}
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 }
