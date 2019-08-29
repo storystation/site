@@ -131,6 +131,7 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
+    // localStorage.setItem('story', JSON.stringify(this.story[0]));
     this.setCurrentComponent();
   }
 
