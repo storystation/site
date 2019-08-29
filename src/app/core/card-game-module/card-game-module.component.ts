@@ -66,7 +66,6 @@ export class CardGameModuleComponent implements OnInit {
     };
 
     this.ws.onopen = () => {
-
       this.ping = setInterval(() => { this.ws.send('[ping]'); }, 10000);
 
       const message = {
@@ -82,7 +81,6 @@ export class CardGameModuleComponent implements OnInit {
 
       console.log('Sending init message.');
       this.ws.send(JSON.stringify(message));
-
       this.launchModule = true;
     };
   }

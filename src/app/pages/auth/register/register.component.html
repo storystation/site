@@ -4,7 +4,6 @@
     <div class="container d-flex flex-column text-center align-items-center">
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
-          <!-- <label for="validationEmail" required>Email</label> -->
           <input type="email" class="form-control text-center" id="validationEmail" placeholder="Email"
                  formControlName="email"
                  [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
@@ -15,11 +14,9 @@
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
-          <!-- <label for="validationPseudo" required>Pseudo</label> -->
           <input type="text" class="form-control text-center" id="validationPseudo" placeholder="Pseudo"
                  formControlName="pseudo"
-                 [ngClass]="{ 'is-invalid': pseudo.invalid && (pseudo.dirty || pseudo.touched) }"
-                 (change)="verifyPseudo()">
+                 [ngClass]="{ 'is-invalid': pseudo.invalid && (pseudo.dirty || pseudo.touched) }">
           <div *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)" class="invalid-feedback">
             Ce pseudo n'est pas valide
           </div>
@@ -27,7 +24,6 @@
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
-          <!-- <label for="validationPassword" required>Mot de passe</label> -->
           <input type="password" class="form-control text-center" id="validationPassword" placeholder="Mot de passe"
                  formControlName="password"
                  [ngClass]="{ 'is-invalid': password.invalid && (password.dirty || password.touched) }">
@@ -38,8 +34,8 @@
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
-          <!-- <label for="validationPasswordCheck" required>Confirmer le mot de passe</label> -->
-          <input type="password" class="form-control text-center" id="validationPasswordCheck" placeholder="Confirmer mot de passe"
+          <input type="password" class="form-control text-center" id="validationPasswordCheck"
+                 placeholder="Confirmer mot de passe"
                  formControlName="passwordCheck"
                  [ngClass]="{ 'is-invalid': passwordCheck.invalid && (passwordCheck.dirty || passwordCheck.touched) }">
           <div *ngIf="passwordCheck.invalid && (passwordCheck.dirty || passwordCheck.touched)" class="invalid-feedback">

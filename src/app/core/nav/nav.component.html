@@ -14,7 +14,8 @@
 
       <ng-container *ngFor="let menu of menus">
         <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link href text-right mr-3" (click)="logout()" *ngIf="((menu.slug === 'logout') && (menu.display_when_logged === isLogged))">
+          <a class="nav-link href text-right mr-3" (click)="logout()"
+             *ngIf="((menu.slug === 'logout') && (menu.display_when_logged === isLogged))">
             {{ menu.name }}
           </a>
           <a class="nav-link href text-right mr-3" [routerLink]="menu.url"

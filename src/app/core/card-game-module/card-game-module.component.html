@@ -21,16 +21,16 @@
     </div>
     <div *ngIf="isComplete">
       <div *ngIf="gameOver" class="row d-flex justify-content-center" [ngClass]="gameOver ? '' : 'hide'">
-          <img src="../../../assets/icons/game-over.png" class="" alt="game_over" width="150px">
-        </div>
+        <img src="../../../assets/icons/game-over.png" class="" alt="game_over" width="150px">
+      </div>
 
-        <div class="alert card-text red m-4 text-dark" [ngClass]="gameOver ? 'alert-danger' : 'alert-success'">
-          {{ gameOver ? moduleContent.response.fail : moduleContent.response.success }}
-        </div>
+      <div class="alert card-text red m-4 text-dark" [ngClass]="gameOver ? 'alert-danger' : 'alert-success'">
+        {{ gameOver ? moduleContent.response.fail : moduleContent.response.success }}
+      </div>
 
-        <a class="btn btn-lg btn-outline-primary-inverted row mt-2 href" (click)="nextStep()">
-          {{ gameOver ? 'Retour à l\'accueil' : 'Suite de l\'histoire' }}
-        </a>
+      <a class="btn btn-lg btn-outline-primary-inverted row mt-2 href" (click)="nextStep()">
+        {{ gameOver ? 'Retour à l\'accueil' : 'Suite de l\'histoire' }}
+      </a>
     </div>
   </div>
 </div>
