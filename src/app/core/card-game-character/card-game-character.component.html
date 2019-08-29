@@ -6,7 +6,7 @@
         <div class="col-lg-8 mx-auto">
             <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
                 <div class="form-group mx-auto">
-                    <label>Choisissez le prénom du personnage principal</label>
+                    <label>Choisissez le prénom du héros</label>
                     <input type="text" formControlName="characterName" class="form-control text-center"
                         [ngClass]="{ 'is-invalid': submitted && f.characterName.errors }" placeholder="" />
                     <div *ngIf="submitted && f.characterName.errors" class="invalid-feedback">
