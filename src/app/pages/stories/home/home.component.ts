@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { StoriesService } from 'src/app/services/stories.service';
 
 @Component({
@@ -15,12 +17,13 @@ export class HomeComponent implements OnInit {
   stories: any = [];
 
   constructor(
-    private storiesService: StoriesService
-  ) { }
+    private storiesService: StoriesService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (!localStorage.getItem('t')) {
-      window.location.href = '/login';
+      this.redirectTo('/login');
     }
 
     if (localStorage.getItem('story')) {
@@ -39,7 +42,17 @@ export class HomeComponent implements OnInit {
 
   selectStory(story: any) {
     localStorage.setItem('story', JSON.stringify(story));
-    window.location.href = '/stories/game';
+    this.redirectTo('/stories/game');
   }
 
+  /**
+   * Redirect to an url, can reload a component
+   *
+   * @param url The url to redirect
+   */
+  redirectTo(url: string) {
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]).then(r => r);
+    });
+  }
 }
