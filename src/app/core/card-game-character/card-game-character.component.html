@@ -1,33 +1,34 @@
 <div class="card text-center">
-    <h2 class="card-header text-uppercase red">
-        Personnages
-    </h2>
-    <div class="card-body">
-        <div class="col-lg-8 mx-auto">
-            <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
-                <div class="form-group mx-auto">
-                    <label>Choisissez le prénom du héros</label>
-                    <input type="text" formControlName="characterName" class="form-control text-center"
-                        [ngClass]="{ 'is-invalid': submitted && f.characterName.errors }" placeholder="" />
-                    <div *ngIf="submitted && f.characterName.errors" class="invalid-feedback">
-                        <div *ngIf="f.characterName.errors.required">Prénom obligatoire</div>
-                    </div>
-                </div>
-
-                <div class="form-group mx-auto">
-                    <label>Choisissez le prénom du personnage secondaire</label>
-                    <input type="text" formControlName="companionName" class="form-control text-center"
-                        [ngClass]="{ 'is-invalid': submitted && f.companionName.errors }" placeholder="" />
-                    <div *ngIf="submitted && f.companionName.errors" class="invalid-feedback">
-                        <div *ngIf="f.companionName.errors.required">Prénom obligatoire</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <button class="btn btn-lg btn-outline-primary m-2" [disabled]="characterForm.invalid">Lancer l'histoire</button>
-                </div>
-            </form>
-
+  <h2 class="card-header text-uppercase red">
+    Personnages
+  </h2>
+  <div class="card-body">
+    <div class="col-lg-8 mx-auto">
+      <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mx-auto">
+          <label>Choisissez le prénom du héros</label>
+          <input type="text" formControlName="characterName" class="form-control text-center"
+                 [ngClass]="{ 'is-invalid': f.characterName.errors }" placeholder="" />
+          <div *ngIf="f.characterName.errors" class="invalid-feedback">
+            <div *ngIf="f.characterName.errors.required">Prénom obligatoire</div>
+          </div>
         </div>
+
+        <div class="form-group mx-auto">
+          <label>Choisissez le prénom du personnage secondaire</label>
+          <input type="text" formControlName="companionName" class="form-control text-center"
+                 [ngClass]="{ 'is-invalid': f.companionName.errors }" placeholder="" />
+          <div *ngIf="f.companionName.errors" class="invalid-feedback">
+            <div *ngIf="f.companionName.errors.required">Prénom obligatoire</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-lg btn-outline-primary m-2" [disabled]="characterForm.invalid">Lancer l'histoire
+          </button>
+        </div>
+      </form>
+
     </div>
+  </div>
 </div>

@@ -57,7 +57,7 @@ export class CardGameCharacterComponent implements OnInit {
     //   }
     // });
   }
-  
+
   /**
    * Redirect to an url, can reload a component
    *
