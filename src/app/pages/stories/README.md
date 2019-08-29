@@ -1,11 +1,10 @@
 ## Composant `home`
-Comprend la page d'accueil pour les jeux
+Comprend la page d'accueil pour les jeux.
 
 ## Composant `game`
-Affichage des cartes permettant de jouer
+Affichage des cartes permettant de jouer.
 
 ## Exemple d'utilisation de l'interface `Story`
-
 ```
 import Story from '../../../../shared/interfaces/story';
 

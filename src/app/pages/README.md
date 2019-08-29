@@ -1,14 +1,14 @@
 # Dossier `pages`
-Ce dossier regroupe toutes les pages de l'application.
+Ce dossier regroupe toutes les vues de l'application.
 
 ## `auth`
-Regroupe toutes les pages relatives à l'authentification.
+Vues concernant l'authentification, l'inscription et la connexion.
 
 ## `landing`
-Page de landing (d'accueil) de l'application.
+Autres vues de l'application.
 
 ## `not-found`
 Page d'erreur 404, appellée lorsque l'application ne trouve pas la page demandée à l'URL indiquée.
 
 ## `stories`
-Regroupe toutes les pages relatives aux jeux.
+Vues des récapitulatifs des histoires, de la création d'une histoire et des cartes pour jouer.
