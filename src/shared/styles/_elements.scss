@@ -84,9 +84,18 @@
 
 .text-quote {
   font-size: 18px;
-  color: rgb(58, 58, 58);
+  color: $quote-dark;
   font-weight: 300;
   letter-spacing: 2px;
+}
+
+/*****
+==================
+### FORMS
+==================
+*****/
+.form-control::-webkit-input-placeholder {
+  color: $black;
 }
 
 /*****
