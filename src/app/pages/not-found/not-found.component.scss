@@ -1,14 +1,16 @@
 .not-found {
-    margin-top: -25px;
+  margin-top: -25px;
 }
 
 .joystick {
-    width: 130px;
-    height: 70px;
-    background: url('../../../assets/icons/sprite_xxs.png') left center;
-    animation: play 4s steps(23) infinite;
-  }
-  
+  width: 130px;
+  height: 70px;
+  background: url('../../../assets/icons/sprite_xxs.png') left center;
+  animation: play 4s steps(23) infinite;
+}
+
 @keyframes play {
-  100% { background-position: -2875px; }
+  100% {
+    background-position: -2875px;
+  }
 }
