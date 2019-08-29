@@ -39,13 +39,33 @@ export class CardGameCharacterComponent implements OnInit {
     localStorage.setItem('companion', this.companionName.value);
     // const test2 = phrase.replace(/%companion_name%/gi, localStorage.getItem('companion'));
 
-    const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
-    request.subscribe(response => {
-      if (response) {
-        this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
-      } else {
-        console.error('Faux, essaie encore');
-      }
+    let story = localStorage.getItem('story');
+
+    story = story.replace(new RegExp(/%character_name%/, 'g'), this.characterName.value);
+    story = story.replace(new RegExp(/%character_companion%/, 'g'), this.companionName.value);
+
+    localStorage.setItem('story', story);
+
+    this.redirectTo('/stories/game');
+
+    // const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
+    // request.subscribe(response => {
+    //   if (response) {
+    //     this.router.navigate(['stories/game']).then(r => console.log('Création de l\'histoire'));
+    //   } else {
+    //     console.error('Faux, essaie encore');
+    //   }
+    // });
+  }
+  
+  /**
+   * Redirect to an url, can reload a component
+   *
+   * @param url The url to redirect
+   */
+  redirectTo(url: string) {
+    this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+      this.router.navigate([url]).then(r => r);
     });
   }
 }

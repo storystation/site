@@ -2,14 +2,16 @@
   <h2 class="text-center">Histoires</h2>
   <p class="text-center">Commencez une nouvelle histoire, ou bien reprenez là où vous en étiez.</p>
 
-  <div class="current-stories mt-5" id="current-stories">
+  <!-- <div class="current-stories mt-5" id="current-stories">
 
     <h3>Histoires en cours</h3>
 
     <div class="font-weight-light">
       <p *ngIf="!storiesLimits">{{ totalCurrentStories }} histoires en cours.</p>
-      <p *ngIf="storiesLimits && storiesLeft === 0">{{ totalCurrentStories }} histoires en cours.<br>Vous avez atteint votre limite mensuelle.</p>
-      <p *ngIf="storiesLimits && storiesLeft > 0">{{ totalCurrentStories }} histoires en cours.<br>Il vous reste {{ storiesLeft }} histoires disponibles pour ce mois.</p>
+      <p *ngIf="storiesLimits && storiesLeft === 0">{{ totalCurrentStories }} histoires en cours.<br>Vous avez atteint
+        votre limite mensuelle.</p>
+      <p *ngIf="storiesLimits && storiesLeft > 0">{{ totalCurrentStories }} histoires en cours.<br>Il vous reste
+        {{ storiesLeft }} histoires disponibles pour ce mois.</p>
     </div>
 
     <div class="font-weight-light">
@@ -17,26 +19,27 @@
         <p>Vous n'avez commencé aucune histoire pour le moment. Générez une nouvelle histoire en cliquant sur le bouton ci-dessous.</p>
         <button type="button" class="btn btn-lg btn-outline-primary">Nouvelle histoire</button>
       </ng-container> -->
+    <!-- </div>
 
-      <ng-container *ngIf="totalCurrentStories > 0">
-        <h3>Jouer une histoire</h3>
-        <p *ngFor="let story of stories">{{story.title}}
-          <button class="btn btn-lg btn-outline-primary m-2" (click)="selectStory(story);">
-            Jouer
-          </button>
-        </p>
-      </ng-container>
-    </div>
-
-  </div>
+  </div> -->
 
   <div class="new-story" id="new-story">
 
     <h3>Nouvelle histoire</h3>
-    <div class="font-weight-light">
-      <p>Envie de vous lancer dans une nouvelle aventure ?<br>Cliquez sur le bouton ci-dessous, et laissez vous guider par le générateur d'histoires.</p>
-    </div>
 
-    <button type="button" class="btn btn-lg btn-outline-primary mt-3" routerLink="/stories/create">Nouvelle histoire</button>
+    <ng-container *ngIf="totalCurrentStories > 0">
+      <div class="font-weight-light">
+        <p>Envie de vous lancer dans une nouvelle aventure ?<br>Cliquez sur le bouton ci-dessous, et laissez vous guider
+          par le générateur d'histoires.</p>
+      </div>
+
+      <h4>Sélectionner un scénario</h4>
+      <p *ngFor="let story of stories">{{story.title}}
+        <input type="radio" (click)="selectStory(story)" />
+      </p>
+    </ng-container>
+
+    <button type="button" class="btn btn-lg btn-outline-primary mt-3" routerLink="/stories/create">Nouvelle
+      histoire</button>
   </div>
 </div>
