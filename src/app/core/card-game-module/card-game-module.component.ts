@@ -17,11 +17,15 @@ export class CardGameModuleComponent implements OnInit {
   launchModule: boolean;
   ws: WebSocket;
   ping: any;
+  isComplete: boolean;
+  gameOver: boolean;
 
   constructor(
     private router: Router
   ) {
     this.launchModule = false;
+    this.isComplete = false;
+    this.gameOver = false;
   }
 
   ngOnInit() {
@@ -32,14 +36,21 @@ export class CardGameModuleComponent implements OnInit {
     clearInterval(this.ping);
     this.ws.close();
 
-    const localStorageJson = JSON.parse(localStorage.getItem('story'));
+    this.isComplete = true;
+    this.launchModule = false;
+
     if (result === 'OK') {
-      localStorageJson.stage = Number(this.moduleContent.response.success);
+      this.gameOver = false;
+      const localStorageJson = JSON.parse(localStorage.getItem('story'));
+      localStorageJson.stage++;
+      localStorage.setItem('story', JSON.stringify(localStorageJson));
     } else if (result === 'KO') {
-      localStorageJson.stage = Number(this.moduleContent.response.fail);
+      this.gameOver = true;
     }
-    localStorage.setItem('story', JSON.stringify(localStorageJson));
-    this.redirectTo('/stories/game');
+  }
+
+  nextStep() {
+    this.gameOver ? this.redirectTo('/') : this.redirectTo('/stories/game');
   }
 
   moduleActivated() {
