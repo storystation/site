@@ -16,7 +16,9 @@ export class CardGameChoicesComponent implements OnInit {
 
   buttons: ChoiceButton[] = [];
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.setButtons(this.moduleContent.answers);

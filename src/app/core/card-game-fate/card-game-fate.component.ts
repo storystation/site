@@ -18,7 +18,6 @@ export class CardGameFateComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.moduleContent);
   }
 
   nextStep() {

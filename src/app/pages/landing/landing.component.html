@@ -1,4 +1,4 @@
-<button *ngIf="Pwa.promptEvent" (click)="installPwa()">Install</button>
+<button *ngIf="Pwa.promptEvent" (click)="installPwa()">Installer l'application</button>
 
 <ng-container *ngIf="isWritersPage">
   <!--WRITERS PAGE-->
@@ -6,15 +6,15 @@
     <h2 class="text-center">Pour les écrivains</h2>
     <div class="">
       <p>Écrivez vos histoires, ajoutez les évènements qui peuvent altérer la quête, choisissez quels modules utiliser.
-          <br>Proposez à vos lecteurs une véritable expérience au cœur de vos ouvrages.</p>
+        <br>Proposez à vos lecteurs une véritable expérience au cœur de vos ouvrages.</p>
       <p>Cette fonctionnalité est encore en cours de développement, restez au courant de toutes nos nouveautés en vous
-          inscrivant à notre newsletter !</p>
+         inscrivant à notre newsletter !</p>
     </div>
-    <form [formGroup]="beOnTouchForm"class="col-lg-6 col-sm-12 mt-4">
+    <form [formGroup]="beOnTouchForm" class="col-lg-6 col-sm-12 mt-4">
       <div class="form-group">
-        <!-- <label for="validationEmail" class="no-display" required>Email</label> -->
-        <input type="email" class="form-control text-center" id="validationEmail" placeholder="Email" formControlName="email"
-                [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
+        <input type="email" class="form-control text-center" id="validationEmail" placeholder="Email"
+               formControlName="email"
+               [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
       </div>
       <div class="container">
         <div class="row justify-content-center mt-4">
@@ -39,24 +39,24 @@
       <div class="d-flex justify-content-center">
         <table class="table table-striped">
           <thead>
-            <tr>
-              <th scope="col" width="20%">Formule</th>
-              <th scope="col">Accès</th>
-              <th scope="col" width="20%">Tarif</th>
-            </tr>
+          <tr>
+            <th scope="col" width="20%">Formule</th>
+            <th scope="col">Accès</th>
+            <th scope="col" width="20%">Tarif</th>
+          </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let spec of subscribeSpecs">
-              <th class="little-font">{{ spec.name }}</th>
-              <td>
-                <div class="font-weight-light little-font" *ngFor="let desc of spec.description">{{ desc.name }}</div>
-              </td>
-              <td class="font-weight-light little-font">{{ spec.price + '€ / m' }}</td>
-            </tr>
+          <tr *ngFor="let spec of subscribeSpecs">
+            <th class="little-font">{{ spec.name }}</th>
+            <td>
+              <div class="font-weight-light little-font" *ngFor="let desc of spec.description">{{ desc.name }}</div>
+            </td>
+            <td class="font-weight-light little-font">{{ spec.price + '€ / m' }}</td>
+          </tr>
           </tbody>
         </table>
       </div>
-  
+
       <h3 class="title-hardware mt-4">Matériels</h3>
       <div class="d-flex justify-content-center">
         <table class="table table-striped">

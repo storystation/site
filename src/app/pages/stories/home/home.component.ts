@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit {
 
   selectStory(story: any) {
     localStorage.setItem('story', JSON.stringify(story));
-    // this.redirectTo('/stories/game');
   }
 
   /**

@@ -34,9 +34,8 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    // this.isRegister = true;
     if (this.password.value !== this.passwordCheck.value) {
-      console.log('ça c\'est pas bon');
+      console.warn('ça c\'est pas bon');
     } else {
       const request = this.authService.register({ username: this.pseudo.value, email: this.email.value, password: this.password.value });
       request.subscribe(response => {
@@ -47,13 +46,6 @@ export class RegisterComponent implements OnInit {
         }
       });
     }
-  }
-
-  /**
-   * Verify if the pseudo already exists or not
-   */
-  verifyPseudo() {
-    console.log('Vérification du pseudo ' + this.pseudo.value);
   }
 
   /**

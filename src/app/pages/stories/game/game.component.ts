@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // import { environment } from '../../../../environments/environment';
-import Story from '../../../../shared/interfaces/story';
+// import Story from '../../../../shared/interfaces/story';
 
 @Component({
   selector: 'app-game',
@@ -121,7 +121,6 @@ export class GameComponent implements OnInit {
       stage: 1
     }
   ];*/
-  // currentStory = this.story[0];
   currentStory = JSON.parse(localStorage.getItem('story'));
 
   constructor(private activatedRoute: ActivatedRoute) {
@@ -133,9 +132,7 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
-    // localStorage.setItem('story', JSON.stringify(this.story[0]));
     console.log(this.currentStory);
-    // console.log(this.moduleDataComponent);
     this.setCurrentComponent();
   }
 
