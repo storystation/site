@@ -33,13 +33,11 @@ export class CardGameCharacterComponent implements OnInit {
   }
 
   onSubmit() {
-
     localStorage.setItem('character', this.characterName.value);
     // const test = phrase.replace(/%character_name%/gi, localStorage.getItem('character'));
 
     localStorage.setItem('companion', this.companionName.value);
     // const test2 = phrase.replace(/%companion_name%/gi, localStorage.getItem('companion'));
-
 
     const request = this.gameService.saveCharacter({ character_name: this.characterName.value, companion_name: this.companionName.value });
     request.subscribe(response => {
