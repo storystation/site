@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { CardGameChoicesComponent } from './card-game-choices.component';
 
 @NgModule({

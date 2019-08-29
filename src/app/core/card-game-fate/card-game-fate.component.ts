@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-game-fate',
@@ -7,15 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardGameFateComponent implements OnInit {
 
-  success: boolean;
-  resultBtn: string;
+  @Input() moduleContent: any;
+  @Input() story: any;
 
-  constructor() {
-    this.success = true;
+  gameOver: boolean;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    // private routeReuseStrategy: RouteReuseStrategy
+  ) {
+    this.gameOver = false;
   }
 
   ngOnInit() {
-    this.resultBtn = this.success ? 'Suite de l\'histoire' : 'Retour à l\'accueil';
+    console.log(this.moduleContent);
+  }
+
+  nextStep() {
+    if (this.gameOver) {
+      this.router.navigate(['/']).then(r => console.log(r));
+    } else {
+      this.redirectTo('/stories/game');
+    }
+  }
+
+  redirectTo(url: string) {
+    this.router.navigateByUrl('/CardGameComponent', { skipLocationChange: true }).then(
+      () => {
+        this.router.navigate([url]).then(r => r);
+      }
+    );
   }
 
 }

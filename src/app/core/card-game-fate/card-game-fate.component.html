@@ -1,21 +1,17 @@
 <div class="card text-center">
-  <h2 class="card-header text-uppercase red">
-    L'invasion
-  </h2>
+  <h2 class="card-header text-uppercase red">{{ story.title }}</h2>
   <div class="card-body col-lg-8 mx-auto">
 
-    <div class="row d-flex justify-content-center" [ngClass]="success ? 'hide' : ''">
+    <div class="row d-flex justify-content-center" [ngClass]="gameOver ? '' : 'hide'">
       <img src="../../../assets/icons/game-over.png" class="" alt="game_over" width="150px">
     </div>
 
-    <div class="alert card-text red m-4" [ngClass]="success ? 'alert-success text-dark' : 'alert-danger'">
-      sgskjlglskng sdgjsdgln
+    <div class="alert card-text red m-4 text-dark" [ngClass]="gameOver ? 'alert-danger' : 'alert-success'">
+      {{ gameOver ? moduleContent.response.fail : moduleContent.response.success }}
     </div>
 
-    <a
-        (click)="moduleActivated()"
-        class="btn btn-lg btn-outline-primary-inverted row mt-2">
-      {{ resultBtn }}
+    <a class="btn btn-lg btn-outline-primary-inverted row mt-2 href" (click)="nextStep()">
+      {{ gameOver ? 'Retour à l\'accueil' : 'Suite de l\'histoire' }}
     </a>
   </div>
 </div>
