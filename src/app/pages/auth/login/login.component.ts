@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../../services/auth.service';
+import { DataSharingService } from '../../../services/data-sharing.service';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(
       private formBuilder: FormBuilder,
       private authService: AuthService,
+      private dataSharingService: DataSharingService,
       private router: Router
   ) {}
 
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
       if (response) {
         // @ts-ignore
         localStorage.setItem('t', response.token);
+        this.dataSharingService.isUserLoggedIn.next(true);
         this.redirectTo('/');
       } else {
         console.error('Mot de passe ou identifiant incorrect');
